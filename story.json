@@ -1,0 +1,102 @@
+{
+    "sequence": ["st.0", "wr.1", "na.2", "mc.3", "mu.4", "sl.5", "en.6"],
+    "st.0": {
+        "item": "start",
+        "itemCode": "st.0",
+        "title": "The Weird Escape",
+        "imgDir": "assets/random.jpg",
+        "description": "Hello! Welcome to our escape room. The ultimate goal is to solve the puzzles that lie ahead and escape the weird world for good! You and your teammates should join forces to make sure that you solve this course in the minimum amount of time making the least number of mistakes. But most importantly, don't forget to enjoy!"
+    },
+    "wr.1": {
+        "item": "written", 
+        "itemCode": "wr.1",
+        "question": "What is number 8?", 
+        "description": "You need to do the most amount of randomass shit to solve this question", 
+        "imgDir": "/assets/random.jpg", 
+        "correct": "idk", 
+        "backBtn": true
+    },
+    "na.2": {
+        "item": "narrative",
+        "itemCode": "na.2",
+        "objectType": [
+            "title",
+            "info",
+            "image",
+            "info",
+            "title",
+            "info",
+            "image",
+            "info"
+        ],
+        "objectDescription": [
+            "The Story Begins",
+            "Hello everyone! So this is a story of a goofy orange who wanted to be, umm, let's just say not so orange. So he drank blue milk, day in, day out.",
+            "/assets/random.jpg",
+            "Lo, behold! His wish indeed came true. He was now no longer an orange orange, but instead, a blue orange. However, his insides were still the same old, orange. He hated what he had become, and he could no longer live with it. He finally decided that he wanted to give his life away by burying himself alive...",
+            "The Second Generation",
+            "Years went by. One would think that the curse of the blue orange ended with his suicide. But sadly, fate would have it another way. From the spot where the blue orange buried himself, grew a large tree, and it bore many oranges that were blue in colour.",
+            "/assets/blue.jpg",
+            "And thus the curse of the blue orange continued for generations to come..."
+        ],
+        "backBtn": true
+    },
+    "mc.3": {
+        "item": "mcq", 
+        "itemCode": "mc.3",
+        "question": "What is not my name?", 
+        "description": "You need to do some randomass shit to solve this question", 
+        "imgDir": "/assets/random.jpg", 
+        "options": ["Adil", "Anisha", "Shadab", "Sameer"], 
+        "correct": "Adil", 
+        "backBtn": true
+    },
+    "mu.4": {
+        "item": "multimcq", 
+        "itemCode": "mu.4",
+        "question": [
+            "What is not my name?", 
+            "What is your name?",
+            "What is not anybody's name?"
+        ],
+        "description": [
+            "You need to do some randomass shit to solve this question", 
+            "If you thought the last one was weird, let me introduce you to this lol.",
+            "It's impressive you're still scrolling, but you should really get back to other, more serious work."
+        ],
+        "imgDir": [
+            "/assets/random.jpg", 
+            "",
+            "/assets/blue.jpg"
+        ],
+        "options": [
+            ["Arhaan", "Anisha", "Shadab", "Sameer"],
+            ["Adil", "lidA", "dAli"],
+            ["Michael", "Steven", "Jack", "Rebecca", "Jason"]
+        ], 
+        "correct": [
+            "Arhaan",
+            "dAli",
+            "Jason"
+        ], 
+        "backBtn": true
+    },
+    "sl.5": {
+        "item": "slider", 
+        "itemCode": "sl.5",
+        "question": "What is my age?", 
+        "description": "You need to do some more randomass shit to solve this question", 
+        "imgDir": "/assets/random.jpg", 
+        "min": 90, 
+        "max": 100, 
+        "correct": 96, 
+        "backBtn": true
+    },
+    "en.6": {
+        "item": "end",
+        "itemCode": "en.6",
+        "title": "Thank You For Playing!",
+        "imgDir": "",
+        "description": "We appreciate the time and effort you've given in trying out and successfully completing our escape room. We've logged the time and click details during your playthrough which you can download by clicking on the button below. We would appreciate it if you could mail a copy of the generated log file to ar9fb@virginia.edu, this would help us with further development. Thank you."
+    }
+}
