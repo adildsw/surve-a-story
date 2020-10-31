@@ -11,7 +11,7 @@ app.use(express.urlencoded({extended: true}));
 
 let storyRaw = fs.readFileSync("story.json");
 let story = JSON.parse(storyRaw); // Stores story data
-let storyIdx = 5; // Stores story progress
+let storyIdx = 4; // Stores story progress
 
 let incorrect = false; // Dictates whether incorrect-input error message should be displayed
 
@@ -38,7 +38,10 @@ router.post('/next', function(request, response) {
         passed = true;
     }
     else {
-        var answer = String(story[itemCode]["correct"]);
+        var answer = story[itemCode]["correct"];
+        if (typeof(answer) == "number") {
+            answer = String(answer);
+        }
         passed = JSON.stringify(answer) == JSON.stringify(selection);
     }
 
