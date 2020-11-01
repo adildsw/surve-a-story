@@ -5,6 +5,8 @@ const router = express.Router();
 const bodyParser = require('body-parser');
 const converter = require('convert-array-to-csv');
 
+const port = process.env.PORT || 8888;
+
 app.set('view engine', 'ejs');
 app.use(express.static("public"));
 app.use(bodyParser.json());
@@ -149,6 +151,6 @@ router.get('/reset', function(request, response) {
 })
 
 app.use('/', router);
-app.listen(process.env.port || 8888);
-
-console.log("Running at Port 8888");
+app.listen(port, function() {
+    console.log("Server Running at Port " + port);
+});
