@@ -96,9 +96,6 @@ router.post('/next', function(request, response) {
             endTime = new Date();
             timeElapsed = endTime - startTime;
             logs.push([timeElapsed, story[story["sequence"][storyIdx]]["itemCode"], "", passed]);
-            
-            
-
         }
     } 
     else {
