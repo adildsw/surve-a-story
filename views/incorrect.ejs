@@ -13,12 +13,20 @@
     </style>
     <script>
         $(document).ready(function() {
+            // Retry button functionality
             $(document).on("click", "#retryBtn", function() {
                 $.get("/retry", function(response) {
                     document.getElementsByTagName("html")[0].innerHTML = response;
                     window.location = window.location;
                 });
-            })
+            });
+
+            // Pressing enter to proceed
+            $(document).bind("keyup", function(e) {
+                if (e.keyCode == 13) {
+                    $("#retryBtn").trigger("click");
+                }
+            });
         });
     </script>
 </head> 
@@ -29,7 +37,7 @@
             <div class="ui raised very padded text container segment">
                 <div class="ui form" id="module">
                     <h2 class="ui header">Oops, that seems incorrect.</h2>
-                    <p>The choice(s) you made in the previous puzzle is/are incorrect. How about you try again?</p>
+                    <p><%=errorMsg%></p>
                     <button class="ui button purple fluid" id="retryBtn">Retry</button>
                 </div>
             </div>
