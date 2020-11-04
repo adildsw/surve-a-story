@@ -17,7 +17,6 @@ let story = JSON.parse(storyRaw); // Stores story data
 let storyIdx = 0; // Stores story progress
 
 let incorrect = false; // Dictates whether incorrect-input error message should be displayed
-let errorMsg = "The choice(s) you made in the previous puzzle is/are incorrect. How about you try again?"; // Message to be displayed upon incorrect-input
 
 // Stores playthrough time related information
 let startTime;
@@ -33,8 +32,8 @@ let logsCSV;
 
 // This route displays the story content
 router.get('/', function(request, response) {
-    if (!incorrect) { 
-        var itemCodeToLoad = story["sequence"][storyIdx];
+    var itemCodeToLoad = story["sequence"][storyIdx];
+    if (!incorrect) {
         if (story[itemCodeToLoad]["item"] == "end") {
             story[itemCodeToLoad]["timeTaken"] = Math.round(timeElapsed/1000);
             story[itemCodeToLoad]["incorrectAttempts"] = incorrectAttempts;
@@ -42,7 +41,7 @@ router.get('/', function(request, response) {
         response.render("container", story[itemCodeToLoad]);
     }
     else {
-        response.render("incorrect", {errorMsg: errorMsg});
+        response.render("incorrect", story[itemCodeToLoad]);
     } 
 });
 
@@ -60,7 +59,6 @@ router.post('/next', function(request, response) {
     else if (item == "start") {
         if (typeof(selection) == "undefined") {
             passed = false;
-            errorMsg = "You must surely have a name! How about you enter your name and try again?";
         }
         else {
             passed = true;
@@ -72,7 +70,6 @@ router.post('/next', function(request, response) {
             answer = String(answer);
         }
         passed = JSON.stringify(answer) == JSON.stringify(selection);
-        errorMsg = "The choice(s) you made in the previous puzzle is/are incorrect. How about you try again?";
     }
 
     // Capturing playthrough logs

@@ -5,7 +5,10 @@
         "itemCode": "st.0",
         "title": "The Weird Escape",
         "imgDir": "assets/random.jpg",
-        "description": "Hello! Welcome to our escape room. The ultimate goal is to solve the puzzles that lie ahead and escape the weird world for good! You and your teammates should join forces to make sure that you solve this course in the minimum amount of time making the least number of mistakes. But most importantly, don't forget to enjoy!"
+        "description": "Hello! Welcome to our escape room. The ultimate goal is to solve the puzzles that lie ahead and escape the weird world for good! You and your teammates should join forces to make sure that you solve this course in the minimum amount of time making the least number of mistakes. But most importantly, don't forget to enjoy!",
+        "errorTitle": "Come on, your name can't be ___, in other words, blank!",
+        "errorImgDir": "assets/blue.jpg",
+        "errorMsg": "You must surely have a name! How about you enter it and try again?"
     },
     "wr.1": {
         "item": "written", 
@@ -14,7 +17,10 @@
         "description": "You need to do the most amount of randomass shit to solve this question", 
         "imgDir": "/assets/random.jpg", 
         "correct": "idk", 
-        "backBtn": true
+        "backBtn": true,
+        "errorTitle": "That's wrong, buddy boy.",
+        "errorImgDir": "",
+        "errorMsg": "Psst, 'idk' the answer."
     },
     "na.2": {
         "item": "narrative",
@@ -49,7 +55,10 @@
         "imgDir": "/assets/random.jpg", 
         "options": ["Adil", "Anisha", "Shadab", "Sameer"], 
         "correct": "Adil", 
-        "backBtn": true
+        "backBtn": true,
+        "errorTitle": "",
+        "errorImgDir": "",
+        "errorMsg": ""
     },
     "mu.4": {
         "item": "multimcq", 
@@ -79,7 +88,10 @@
             "dAli",
             "Jason"
         ], 
-        "backBtn": true
+        "backBtn": true,
+        "errorTitle": "",
+        "errorImgDir": "",
+        "errorMsg": ""
     },
     "sl.5": {
         "item": "slider", 
@@ -90,7 +102,10 @@
         "min": 90, 
         "max": 100, 
         "correct": 96, 
-        "backBtn": true
+        "backBtn": true,
+        "errorTitle": "",
+        "errorImgDir": "",
+        "errorMsg": ""
     },
     "en.6": {
         "item": "end",
