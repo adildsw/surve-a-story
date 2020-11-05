@@ -1,115 +1,558 @@
 {
-    "sequence": ["st.0", "wr.1", "na.2", "mc.3", "mu.4", "sl.5", "en.6"],
-    "st.0": {
+    "sequence": ["start_page", "page_1", "page_2", "puzzle_1",  "page_3", "page_4", "page_5", "puzzle_2", "page_6", "page_7", "puzzle_3", "page_8", "page_9", "puzzle_4", "page_10", "page_11", "puzzle_5", "page_12","page_13", "puzzle_6_narration", "puzzle_6", "page_14", "puzzle_7_narration","puzzle_7", "page_15", "end_page"],
+    "start_page": {
         "item": "start",
-        "itemCode": "st.0",
-        "title": "The Weird Escape",
-        "imgDir": "assets/random.jpg",
+        "itemCode": "start_page",
+        "title": "Pokemon, I choose you!",
+        "imgDir": "assets/pokemon_pandemic.jpeg",
         "description": "Hello! Welcome to our escape room. The ultimate goal is to solve the puzzles that lie ahead and escape the weird world for good! You and your teammates should join forces to make sure that you solve this course in the minimum amount of time making the least number of mistakes. But most importantly, don't forget to enjoy!",
         "errorTitle": "Come on, your name can't be ___, in other words, blank!",
-        "errorImgDir": "assets/blue.jpg",
+        "errorImgDir": "",
         "errorMsg": "You must surely have a name! How about you enter it and try again?"
     },
-    "wr.1": {
-        "item": "written", 
-        "itemCode": "wr.1",
-        "question": "What is number 8?", 
-        "description": "You need to do the most amount of randomass shit to solve this question", 
-        "imgDir": "/assets/random.jpg", 
-        "correct": "idk", 
-        "backBtn": true,
-        "errorTitle": "That's wrong, buddy boy.",
-        "errorImgDir": "",
-        "errorMsg": "Psst, 'idk' the answer."
-    },
-    "na.2": {
+    "page_1": {
         "item": "narrative",
-        "itemCode": "na.2",
+        "itemCode": "page_1",
+        "objectType": [
+            "title",
+            "image",
+            "info",
+            "info",
+            "info",
+            "info"
+            
+        ],
+        "objectDescription": [
+            "The Story Begins",
+            "assets/page_1.gif",
+            "You’re  Ash! You’re a 10 year old full of imagination, confidence, and dreams that are almost too big for this village of Pallet Town—plus you have the desire to become a Pokemon Master!",
+            "You are excited and sleepless ever since you heard from your mother that you will be getting a NEW POKEMON from Dr.Oak tomorrow.",
+            "Eventually, you drift off to dreamland, but your (tiny, tiny) mind is still stuck on its single track – Pokemon.",
+            "Unfortunately, in all the excitement of your dreams, you destroy your pokeball-shaped alarm clock. You finally manage to stumble out of bed very late and you rush down the well-beaten path between your house and the good professor Dr. Oak’s lab while still in your nightclothes. "  
+        ],
+        "backBtn": true
+    },
+    "page_2": {
+        "item": "narrative",
+        "itemCode": "page_2",
         "objectType": [
             "title",
             "info",
             "image",
             "info",
+            "info",
+            "info",
+            "info",
+            "image",
+            "info",
+            "info"
+            
+        ],
+        "objectDescription": [
+            "Gary Oak, your foe for life!",
+            "You finally arrive at Dr. Oak’s Pokemon Lab and squeeze through a squad of cheerleaders that have assembled there for some reason, and crash headlong into the single greatest enemy in your life: Gary Oak!",
+            "assets/page_2_ash_arrives.gif",
+            "It appears that the assembled cheerleaders and roaring crowd are there to see off Pallet Town's most promising young trainer: Gary Oak, grandson to the celebrated professor. ", 
+            "“Hey, watch where you're going kid! Well, you must be Ash. You look excited to get a pokemon today and yet you end up here in your night pants an hour late. At least, you get a chance to meet me!”, Gary ridicules you. ", 
+            "“I am not a kid and I will become the best pokemon trainer the world has ever seen!”, you rebut Gary. ", 
+            "“Save your false dreams for another night’s sleep. I already beat you to get my first pokemon and I will be the best pokemon trainer ever on the face of the earth”, says Gary with a smirk on his face.", 
+            "assets/page_2_gary_challenges.gif",
+            "“Gary, show some respect! And what pokemon did you get?” you ask Gary, keeping your anger between your teeth.", 
+            "“You want some respect? You wanna know which pokemon I picked? Answer this puzzle and earn it!”" 
+        ],
+        "backBtn": true
+    },
+    "puzzle_1": {
+        "item": "mcq", 
+        "itemCode": "puzzle_1",
+        "title": "Earn some respect!",
+        "question": "What comes next in the pattern?", 
+        "description": "Pay attention to the items and the numbers!", 
+        "imgDir": "/assets/puzzle_1.png", 
+        "options": ["/assets/puzzle_1_op1.png", "/assets/puzzle_1_op2.png", "/assets/puzzle_1_op3.png", "/assets/puzzle_1_op4.png"], 
+        "correct": "/assets/puzzle_1_op4.png", 
+        "backBtn": true,
+        "errorTitle": "That's wrong, buddy boy.",
+        "errorImgDir": "assets/puzzle_1_wrong.gif",
+        "errorMsg": "Gary - “Well, Ash, ya snooze ya lose, and you're behind right from the start!“"
+    },
+    "page_3": {
+        "item": "narrative",
+        "itemCode": "page_3",
+        "objectType": [
             "title",
+            "info",
+            "info",
+            "info",
+            "info",
+            "image",
+            "info"
+           
+        ],
+        "objectDescription": [
+            "Gary is off to start his pokemon training! ",
+            "Gary - “For heaven’s sake, I solved these puzzles when I was in my diapers. Good job for a kid that you are!”",
+            "You - “Well, let's see who’s what when I get my first pokemon. Now, tell me what’s your first pokemon?”",
+            "Gary - “It’s the best one available, Haha!”",
+            "Gary makes a telling remark about how it is good to have a grandfather in the Pokemon business (which goes right over your head), and then departs in a chauffeured red convertible with his loyal fans and cheerleaders following behind.",
+            "/assets/page_3.gif",
+            ""
+        ],
+        "backBtn": true
+    },
+    "page_4": {
+        "item": "narrative",
+        "itemCode": "page_4",
+        "objectType": [
+            "title",
+            "info",
+            "info",
+            "info",
+            "image",
+            "info"
+           
+        ],
+        "objectDescription": [
+            "What's in store for you?",
+            "With Gary gone, you belatedly make your way into professor Oak’s lab. Professor Oak breaks the news to you that all three starter Pokemons were already claimed by trainers who arrived on time – but fear not! ",
+            "Professor Oak was wise to have a backup plan in case you were late!  ",
+            "It's Pikachu! Oak mysteriously warns you that there is a problem with this particular Pikachu. But this doesn't register with you because - “OMG! Finally, a POKEMON!!!!!!!!!!”",
+            "assets/page_4.gif",
+            "“Wait! You still seem to be a kid in a candy world. The first day is extremely important for any grown-up pokemon trainer and yet you couldn’t care less to oversleep and miss the chance to get the pokemon of your choice. I doubt whether you would become a sane pokemon trainer at all”, says Dr. Oak in apprehension."
+        ],
+        "backBtn": true
+    },
+    "page_5": {
+        "item": "narrative",
+        "itemCode": "page_5",
+        "objectType": [
+            "title",
+            "info",
+            "info",
+            "image",
+            "info"
+           
+        ],
+        "objectDescription": [
+            "Are you ready for a Pokemon?",
+            "Your world is shattered. All those days where you aspired to become the best pokemon trainer in the world, all those dreams in which you conquered the best types of pokemons, all those medals you wanted to win by being a friend to your pokemons rather than a trainer came down like a pack of cards!",
+            "“No Professor Oak! The only thing that I ever dreamt of in my life is to become a pokemon trainer. It’s my mistake that I am late to pick my first pokemon but I loved this Pikachu from the moment I have seen this. I will not be a mere trainer, but a very good friend with him. I will train my Pikachu to become the best electric pokemon!”, you plead Dr. Oak with teary eyes.",
+            "/assets/page_5.gif",
+            "“This Pikachu is not in the best of his shape and I don’t want to put him in irresponsible hands. Prove it to me that you are wise and smart to rise to the situation and train this Pikachu”, remarks Professor Oak with a puzzle. "
+        ],
+        "backBtn": true
+    },
+    "puzzle_2": {
+        "item": "slider", 
+        "itemCode": "puzzle_2",
+        "question": "Balance the poke-money scale to get Pikachu!", 
+        "description": "In the pokemon world, poke-dollars(=100 poke-cents), poke-dimes(=10 poke-cents) and poke-cents are used. The left tray has 7 poke-dollars. How many poke-dimes should you place in the right tray to balance the scale in poke-money value.", 
+        "imgDir": "/assets/puzzle_2_ques.png", 
+        "min": 50, 
+        "max": 100, 
+        "correct": 70,
+        "backBtn": true,
+        "errorTitle": "Bad!",
+        "errorImgDir": "assets/puzzle_2.gif",
+        "errorMsg": "Your reckless behavior irked the Pikachu. Now face his wrath! Be a good boy and try to earn the Pikachu again."
+    },
+    "page_6": {
+        "item": "narrative",
+        "itemCode": "page_6",
+        "objectType": [
+            "title",
+            "info",
+            "info",
+            "image",
+            "info"
+           
+        ],
+        "objectDescription": [
+            "Your first Pokemon!",
+            "You have proved your worthiness to professor Oak. The professor then hands you some pokeballs and a Pokedex and instructs you to take Pikachu and go catch one of literally every Pokemon in the world.",
+            "Unfortunately, Pikachu does not seem to be on board with this plan – and with good reason. ",
+            "assets/page_6.gif",
+            "You will prove to be a particularly poor Pokemon trainer (albeit one who proves to be something of an idiot savant when it comes to battling), so much so that the Pokemon Company will eventually be forced to do away with its 'Gotta catch 'em all' slogan."
+        ],
+        "backBtn": true
+    },
+    "page_7": {
+        "item": "narrative",
+        "itemCode": "page_7",
+        "objectType": [
+            "title",
+            "info",
+            "info",
+            "info"
+           
+        ],
+        "objectDescription": [
+            "Are you friends?",
+            "Outside of the Professor’s laboratory, you find that your mom has recruited something of a cheering squad for you as well. It is nowhere near as large as Gary's (rightly so).",
+            "As you prepare to leave, your mother dumps a pile of clothes into your arms, gives you a (probably needed) reminder not to burn yourself on hot liquids, and finally asks you why your cute new yellow pokemon isn't inside a pokeball. ",
+            "Dr. Oak remarks that Pikachu is not yet on good terms with you and you need to show him that you are his friend. You ask professor Oak how to befriend Pikachu and he suggests solving this puzzle to impress your cute little yellow powerhouse."
+        ],
+        "backBtn": true
+    },
+    "puzzle_3": {
+        "item": "multimcq", 
+        "itemCode": "puzzle_3",
+      "question": [
+        "Count Right!!",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "description": [
+        "How many Pokeballs are there?",
+        "How many Great Balls are there?",
+        "How many Meowths are there?",
+        "How many Jessies are there?",
+        "How many Jameses are there?"
+      ],
+        "imgDir": [
+            "assets/puzzle_3.png", 
+            "",
+            "",
+            "",
+            ""
+        ],
+        "options": [
+            ["9", "10", "11", "12"],
+            ["3", "4", "6","5" ],
+          [ "10", "7", "9", "11"],
+          [ "3", "4", "5","6" ],
+          ["2","4","6","8"]
+        ], 
+        "correct": [
+            "11",
+            "5",
+          "10",
+          "4",
+          "6"
+        ], 
+        "backBtn": true,
+        "errorTitle": "That's not the way!",
+        "errorImgDir": "assets/puzzle_3.gif",
+        "errorMsg": "No, No, No! That’s absolutely not the way to do it! Now that Pikachu blasted the hell out of everyone here, Dr. Oak being a nerd that he is, gives a science lesson to you, “Rubber doesn’t conduct electricity!. Try again if you can get Pikachu into the pokeball.”"
+    },
+    "page_8": {
+        "item": "narrative",
+        "itemCode": "page_8",
+        "objectType": [
+            "title",
+            "info",
+            "image",
+            "info",
+            "info"
+           
+        ],
+        "objectDescription": [
+            "Pikachu doesn't like pokeball",
+            "Well, that was a good try! ",
+            "assets/page_8.gif",
+            "It didn’t irk Pikachu, but he clearly is not getting into that red ball. What is that worrying Pikachu? The pokeball? Or you? Let’s wait and see!",
+            "And so you leave home with one last (also necessary) reminder from your mother to change your underwear every day."
+        ],
+        "backBtn": true
+    },
+    "page_9": {
+        "item": "narrative",
+        "itemCode": "page_9",
+        "objectType": [
+            "title",
+            "info",
+            "info",
+            "image",
+            "info",
+            "info",
+            "info",
+            "image",
+            "info"
+           
+        ],
+        "objectDescription": [
+            "The quest starts...",
+            "Out on the road to Viridian City, you are still having trouble getting your new pokemon to cooperate. So you try to make Pikachu jealous by feigning interest in a new Pokemon. ",
+            "Spotting a Pidgey (a small bird pokemon) by the side of the road, you spin your hat backwards for the first time (the internationally recognized sign that things are about to get serious), and unleash the patented Ash Ketchum Pokemon catching technique – throwing a pokeball without even attempting to weaken the target first. ",
+            "assets/page_9.gif",
+            "The Pidgey gets sucked into the ball, it shakes...and the Pidgey bursts out and runs free once more. ",
+            "You are confused! First Pikachu and then this Pidgey. If you can't get these small ones to get into the pokeball, how would you catch the enormous ones like the Charizard?",
+            "Now you remember that professor Oak has given you an electronic pokemon encyclopedia - Dexter, the Pokedex! You try to open the Pokedex but it is locked. You need to find out the passcode for the Pokedex.",
+            "assets/page_9_pokedex.gif",
+            ""
+        ],
+        "backBtn": true
+    },
+    "puzzle_4": {
+        "item": "written", 
+        "itemCode": "puzzle_4",
+        "title": "Unlock the Pokedex",
+        "question": "Use this code sheet to decipher the given morse code",
+        "description": "What does this encrypted code read? (Enter in numbers) ", 
+        "imgDir": "/assets/puzzle_4_ques.png",
+        "imgDir_sub": "/assets/puzzle_4_sub.png",
+        "correct": "15", 
+        "backBtn": true,
+        "errorTitle": "Psst..",
+        "errorImgDir": "assets/puzzle_4.gif",
+        "errorMsg": "How do you assume that you’re gonna become the world’s best pokemon trainer when you can't even get this silly Pokedex to work? Guess we should have used Gary's story for the escape room. Try again! "
+    },
+    "page_10": {
+        "item": "narrative",
+        "itemCode": "page_10",
+        "objectType": [
+            "title",
+            "image",
+            "info",
+            "info",
+            "image",
+            "info",
+            "info",
+            "info",
+            "info",
+            "info",
+            "info"
+           
+        ],
+        "objectDescription": [
+            "Dexter, prankster!",
+            "assets/page_10.gif",
+            "At this point Dexter, the voice of your Pokedex, chimes in patronizingly saying, 'To capture a Pokémon, you usually have your own Pokémon battle with the other.' ",
+            "You are unable to convince your laughing Pikachu that it should assist its idiot master in catching more Pokemon, and you soon become distracted by a foraging Rattata (a rat pokemon), leading to another hilariously sassy conversation between You and Dexter.",
+            "assets/page_10_laugh.gif",
+            "Dexter: A forest Pokémon, Rattata. It likes cheese, nuts, fruits, and berries",
+            "You: Yeah but, this isn't a forest, it's an open field.",
+            "Dexter: It also comes out into fields to steal food from stupid travelers.",
+            "You: That means.. I'm stupid?",
+            "The truth hurts sometimes, Ashy-boy!" 
+        ],
+        "backBtn": true
+    },
+    "page_11": {
+        "item": "narrative",
+        "itemCode": "page_11",
+        "objectType": [
+            "title",
+            "info",
+            "image",
             "info",
             "image",
             "info"
         ],
         "objectDescription": [
-            "The Story Begins",
-            "Hello everyone! So this is a story of a goofy orange who wanted to be, umm, let's just say not so orange. So he drank blue milk, day in, day out.",
-            "/assets/random.jpg",
-            "Lo, behold! His wish indeed came true. He was now no longer an orange orange, but instead, a blue orange. However, his insides were still the same old, orange. He hated what he had become, and he could no longer live with it. He finally decided that he wanted to give his life away by burying himself alive...",
-            "The Second Generation",
-            "Years went by. One would think that the curse of the blue orange ended with his suicide. But sadly, fate would have it another way. From the spot where the blue orange buried himself, grew a large tree, and it bore many oranges that were blue in colour.",
-            "/assets/blue.jpg",
-            "And thus the curse of the blue orange continued for generations to come..."
+            "Ill Fate!",
+            "Undeterred by your failure to win the confidence of either your pet mouse or your inanimate electronic encyclopedia, you decide to go all Safari Zone and start chucking rocks at the Pidgey.", 
+            "assets/page_11_stone.gif",
+            "Unfortunately, you accidentally strike an ornery Spearow instead, causing it to attack Pikachu. Pikachu reciprocates with a vicious ThunderShock and Spearow calls for the backup of its feathery flock.",
+            "assets/page_11_attack.gif",
+            ""
         ],
         "backBtn": true
     },
-    "mc.3": {
-        "item": "mcq", 
-        "itemCode": "mc.3",
-        "question": "What is not my name?", 
-        "description": "You need to do some randomass shit to solve this question", 
-        "imgDir": "/assets/random.jpg", 
-        "options": ["Adil", "Anisha", "Shadab", "Sameer"], 
-        "correct": "Adil", 
+    "puzzle_5": {
+        "item": "slider", 
+        "itemCode": "puzzle_5",
+        "question": "Can you get ahead?", 
+        "description": "How many Spearows are trying to attack you?", 
+        "imgDir": "/assets/puzzle_5.gif", 
+        "min": 5, 
+        "max": 15, 
+        "correct": 9, 
         "backBtn": true,
-        "errorTitle": "",
-        "errorImgDir": "",
-        "errorMsg": ""
+        "errorTitle": "Are you insane?",
+        "errorImgDir": "/assets/puzzle_5_wrong.gif",
+        "errorMsg": "You look like you are inviting harm from the Spearow folk. For God’s sake, at least get our cute little Pikachu out of the danger, and then be the angry little young man that you are!"
     },
-    "mu.4": {
+    "page_12": {
+        "item": "narrative",
+        "itemCode": "page_12",
+        "objectType": [
+            "title",
+            "info",
+            "image",
+            "info"
+            
+        ],
+        "objectDescription": [
+            "Swim or Stupid?",
+            "You and Pikachu try to book it out of there as fast as possible and you arrive at what will become a typical Pokemon writer's plot device –  the top of a waterfall.",
+            "assets/page_12.gif",
+            "You either stupidly reason that you can fly or correctly reason that Spearows can't swim, either way, the result is the same. You and Pikachu are driven underwater by the current."
+        ],
+        "backBtn": true
+    },
+    "page_13": {
+        "item": "narrative",
+        "itemCode": "page_13",
+        "objectType": [
+            "title",
+            "info",
+            "image",
+            "info",
+            "info",
+            "image",
+            "info"
+        ],
+        "objectDescription": [
+            "Meet Misty!",
+            "Meanwhile, on the shore, a feisty red-haired girl is fishing on the bank, when she suddenly gets a tug on her lure (did you think it was food and bite it?), and she yanks you and Pikachu clean out of the water. ",
+            "assets/page_13_misty.gif",
+            "The girl's name is Misty, and she shows great concern for the well-being of the Pikachu she just fished out of the river, and typical Misty-rage at the boy she pulled out with it.",
+            "It turns out that trying to commit watery suicide wasn't enough to make the murderous flock of Spearow go away. ",
+            "assets/page_13_cycle.gif",
+            "In an iconic moment, you see Misty’s bicycle and plan your getaway. As you try to grab it for the run, you realize that it’s locked by a couple of locks, a red one and a blue one. You need to unlock these using alphanumeric codes."
+        ],
+        "backBtn": true
+    },
+    "puzzle_6_narration": {
+        "item": "narrative",
+        "itemCode": "puzzle_6_narration",
+        "objectType": [
+            "title",
+            "info",
+            "image",
+            "info",
+            "image",
+            "info",
+            "image",
+            "info"
+        ],
+        "objectDescription": [
+           "Unlock the bike",
+           "Look at the two arrows, one red and the other blue",
+           "/assets/puzzle_6_q.jpg",
+           "How are the map and lists of high and low temperatures connected?",
+           "/assets/puzzle_6_h.jpg",
+           "What combinations could open the locks?",
+           "/assets/puzzle_6_l.jpg",
+           ""
+        ],
+        "backBtn": true
+    },
+    "puzzle_6": {
         "item": "multimcq", 
-        "itemCode": "mu.4",
+        "itemCode": "puzzle_6",
         "question": [
-            "What is not my name?", 
-            "What is your name?",
-            "What is not anybody's name?"
+            "Can you unlock them?", 
+            ""
         ],
         "description": [
-            "You need to do some randomass shit to solve this question", 
-            "If you thought the last one was weird, let me introduce you to this lol.",
-            "It's impressive you're still scrolling, but you should really get back to other, more serious work."
+            "The blue lock has four wheels to spin for a combination. The first two wheels are letters and the other two wheels are numbers. Which combination do you use for the blue lock?", 
+            "The red lock has five wheels to spin for a combination. The first two wheels are letters and the other three wheels are numbers. Which combination do you use for the red lock?"
         ],
         "imgDir": [
-            "/assets/random.jpg", 
+            "", 
             "",
-            "/assets/blue.jpg"
+            ""
         ],
         "options": [
-            ["Arhaan", "Anisha", "Shadab", "Sameer"],
-            ["Adil", "lidA", "dAli"],
-            ["Michael", "Steven", "Jack", "Rebecca", "Jason"]
+            ["NC34", "ND60", "TN32", "TX23", "SC22", "SD58"],
+            ["IA118", "ID118", "IH117", "IL117", "IN116", "IO116"]
         ], 
         "correct": [
-            "Arhaan",
-            "dAli",
-            "Jason"
+            "SC22",
+            "ID118"
         ], 
         "backBtn": true,
-        "errorTitle": "",
-        "errorImgDir": "",
-        "errorMsg": ""
+        "errorTitle": "Come on, concentrate!",
+        "errorImgDir": "assets/puzzle_6_hint.png",
+        "errorMsg": "You can surely do better than that! Your first fight as a pokemon master is a fistfight with a little girl and you can’t even win that. Speaks volumes about what we are gonna see in the coming episodes, Ash!"
     },
-    "sl.5": {
+    "page_14": {
+        "item": "narrative",
+        "itemCode": "page_14",
+        "objectType": [
+            "title",
+            "info",
+            "info",
+            "image",
+            "info",
+            "info",
+            "image",
+            "info"
+        ],
+        "objectDescription": [
+            "Trapped...",
+            "You steal Misty's bicycle to make your getaway, promising to return it someday.",
+            "The mental strain of operating a bicycle proves too great for you and you crash to the ground as the Spearow moves in for the kill and a thunderstorm dramatically rolls in. ",
+            "assets/page_14_cycle.gif",
+            "This inspires the stupid you to stand up with arms stretched wide and declare, 'Spearows, do you know I am? I'm Ash from the town of Pallet.'",
+            "'I am destined to be the world's number one Pokemon master. I can't be defeated by the likes of you. I'm going to capture and defeat you all.'",
+            "assets/page_14_stand.gif",
+            "Well, that’s a dramatic dialogue! But we all know that you can't shoo the Spearows off without the help of Pikachu. So, try hard and prove to Pikachu one last time that you are a trainer worthy enough to be friends with, by solving this puzzle."
+        ],
+        "backBtn": true
+    },
+    "puzzle_7_narration": {
+        "item": "narrative",
+        "itemCode": "puzzle_7_narration",
+        "objectType": [
+            "title",
+            "info",
+            "info",
+            "image",
+            "info",
+            "info",
+            "info",
+            "info"
+            
+        ],
+        "objectDescription": [
+           "Travelling Pokeball Salesman",
+           "Kanto is a region in the Pokémon series and is the main region in first generation and a secondary region in the second generation of games. ",
+           "You are at pallet Town currently with your friends. The goal is to reach Saffron City and professor Oak gave you two paths to reach Saffron City - land only route and a sea+land route.",
+           "/assets/puzzle_7.jpg",
+           "Path 1: Goes through Cerulean City and Rock Tunnel",
+           "Path 2: Goes through Cinnabar Island and Lavender Town",
+           "Professor Oak explicitly instructed you to focus on the destination and to not take any path which will not lead to the destination"
+
+        ],
+        "backBtn": true
+    },
+    "puzzle_7": {
         "item": "slider", 
-        "itemCode": "sl.5",
-        "question": "What is my age?", 
-        "description": "You need to do some more randomass shit to solve this question", 
-        "imgDir": "/assets/random.jpg", 
-        "min": 90, 
-        "max": 100, 
-        "correct": 96, 
+        "itemCode": "puzzle_7",
+        "question": "Divide and Conquer", 
+        "description": "Keep adding the route values for both the paths as you tread forward. Add the two values that you get from Paths 1,2 and pick it on the slider.", 
+        "imgDir": "", 
+        "min": 155, 
+        "max": 160, 
+        "correct": 159, 
         "backBtn": true,
         "errorTitle": "",
         "errorImgDir": "",
-        "errorMsg": ""
+        "errorMsg": "That’s it. We are sending Pikachu to Gary! You boast that you are better than Gary and yet you fail to impress your first pokemon to hang on with you."
     },
-    "en.6": {
+    "page_15": {
+        "item": "narrative",
+        "itemCode": "page_15",
+        "objectType": [
+            "title",
+            "info",
+            "image",
+            "info",
+            "image",
+            "info",
+            "image",
+            "info"
+        ],
+        "objectDescription": [
+            "Friends at last!",
+            "Pikachu, feeling pity for its dumb-Ash trainer, and worrying about the legal implications of allowing its master to get killed, decides to intervene and summons the power of almighty Thor, the Norse god of Thunder, to disintegrate the Spearow in fiery electricity.",
+            "assets/page_15_thunder.gif",
+            "As the sun returns, it appears that the energy Pikachu expelled weakened its mental state, causing it to develop Stockholm Syndrome and become friends with its erstwhile foe and master. ",
+            "assets/page_15_firends_1.gif",
+            "",
+            "assets/page_15_firends_2.gif",
+            ""
+        ],
+        "backBtn": false
+    },
+    "end_page": {
         "item": "end",
-        "itemCode": "en.6",
+        "itemCode": "end_page",
         "title": "Thank You For Playing!",
         "imgDir": "",
         "description": "We appreciate the time and effort you've given in trying out and successfully completing our escape room. We've logged the time and click details during your playthrough which you can download by clicking on the button below. We would appreciate it if you could mail a copy of the generated log file to ar9fb@virginia.edu, this would help us with further development. Thank you."
