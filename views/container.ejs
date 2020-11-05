@@ -18,9 +18,6 @@
                 if (item == "mcq" ) {
                     selection = $('#mcqInput').find('[name="0"]:checked').val();
                 }
-                else if (item == "mcq_img_options" ) {
-                    selection = $('#mcqInput').find('[name="0"]:checked').val();
-                }
                 else if (item == "multimcq") {
                     selection = [];
                     for (var i = 0; i < $("#mcqcount").val(); i++) {
@@ -113,7 +110,13 @@
                                 <div class="field">
                                     <div class="ui radio checkbox">
                                     <input type="radio" name="0" class="hidden" value="<%=options[i]%>">
-                                    <label><img class="ui fluid image" src="<%=options[i]%>"></label>
+                                    <label>
+                                        <% if (optionType == "img") { %>
+                                            <img class="ui fluid image" src="<%=options[i]%>">
+                                        <% } else { %>
+                                            <%=options[i]%>
+                                        <% } %>
+                                    </label>
                                     </div>
                                 </div>
                             <% } %>
