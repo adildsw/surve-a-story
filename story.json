@@ -1,10 +1,10 @@
 {
-    "sequence": ["start_page", "page_1", "page_2", "puzzle_1",  "page_3", "page_4", "page_5", "puzzle_2", "page_6", "page_7", "puzzle_3", "page_8", "page_9", "puzzle_4", "page_10", "page_11", "puzzle_5", "page_12","page_13", "puzzle_6_narration", "puzzle_6", "page_14", "puzzle_7_narration","puzzle_7", "page_15", "end_page"],
+    "sequence": ["start_page", "page_1", "extra_puzzle_1", "page_2", "puzzle_1",  "page_3", "page_4", "puzzle_2", "page_6", "page_7", "puzzle_3", "page_8", "page_9", "puzzle_4", "page_10", "page_11", "puzzle_5", "page_12","page_13", "puzzle_6_narration", "puzzle_6", "page_14", "puzzle_7_narration","puzzle_7", "page_15", "end_page"],
     "start_page": {
         "item": "start",
         "itemCode": "start_page",
         "title": "Pokemon, I choose you!",
-        "imgDir": "assets/pokemon_pandemic.jpeg",
+        "imgDir": "assets/extra_start.jpg",
         "description": "Hello! Welcome to our escape room. The ultimate goal is to solve the puzzles that lie ahead and escape the weird world for good! You and your teammates should join forces to make sure that you solve this course in the minimum amount of time making the least number of mistakes. But most importantly, don't forget to enjoy!",
         "errorTitle": "Come on, your name can't be ___, in other words, blank!",
         "errorImgDir": "",
@@ -19,6 +19,7 @@
             "info",
             "info",
             "info",
+            "info",
             "info"
             
         ],
@@ -28,9 +29,26 @@
             "You’re  Ash! You’re a 10 year old full of imagination, confidence, and dreams that are almost too big for this village of Pallet Town—plus you have the desire to become a Pokemon Master!",
             "You are excited and sleepless ever since you heard from your mother that you will be getting a NEW POKEMON from Dr.Oak tomorrow.",
             "Eventually, you drift off to dreamland, but your (tiny, tiny) mind is still stuck on its single track – Pokemon.",
-            "Unfortunately, in all the excitement of your dreams, you destroy your pokeball-shaped alarm clock. You finally manage to stumble out of bed very late and you rush down the well-beaten path between your house and the good professor Dr. Oak’s lab while still in your nightclothes. "  
+            "You finally manage to stumble out of bed very late. Unfortunately, in all the excitement of your dreams, you destroy your pokeball-shaped alarm clock.",
+            "Before you begin your adventures, you need to make sure that your alarm clock is set for tomorrow."
         ],
         "backBtn": true
+    },
+    "extra_puzzle_1": {
+        "item": "mcq",
+        "itemCode": "extra_puzzle_1",
+        "title": "Help Ash in setting the alarm!",
+        "question": "What time does Ash set the alarm to?", 
+        "description": "Use the clues given to you to find out Ash's daily wake up time!", 
+        "imgDir": "/assets/extra_puzzle_1.jpg", 
+        "optionType": "text",
+        "options": ["6:00AM", "8:45AM", "11:34AM", "12:35PM", "12:00PM"], 
+        "correct":  "12:35PM", 
+        "backBtn": true,
+        "errorTitle": "THAT EARLY!?",
+        "errorImgDir": "",
+        "errorMsg": "Ash isn't as active as one would expect him to be. How about you try again?"
+
     },
     "page_2": {
         "item": "narrative",
@@ -50,7 +68,7 @@
         ],
         "objectDescription": [
             "Gary Oak, your foe for life!",
-            "You finally arrive at Dr. Oak’s Pokemon Lab and squeeze through a squad of cheerleaders that have assembled there for some reason, and crash headlong into the single greatest enemy in your life: Gary Oak!",
+            "You rush down the well-beaten path between your house and the good professor Dr. Oak’s lab while still in your nightclothes. You finally arrive at Dr. Oak’s Pokemon Lab and squeeze through a squad of cheerleaders that have assembled there for some reason, and crash headlong into the single greatest enemy of your life: Gary Oak!",
             "assets/page_2_ash_arrives.gif",
             "It appears that the assembled cheerleaders and roaring crowd are there to see off Pallet Town's most promising young trainer: Gary Oak, grandson to the celebrated professor. ", 
             "“Hey, watch where you're going kid! Well, you must be Ash. You look excited to get a pokemon today and yet you end up here in your night pants an hour late. At least, you get a chance to meet me!”, Gary ridicules you. ", 
@@ -60,7 +78,7 @@
             "“Gary, show some respect! And what pokemon did you get?” you ask Gary, keeping your anger between your teeth.", 
             "“You want some respect? You wanna know which pokemon I picked? Answer this puzzle and earn it!”" 
         ],
-        "backBtn": true
+        "backBtn": false
     },
     "puzzle_1": {
         "item": "mcq", 
@@ -99,7 +117,7 @@
             "/assets/page_3.gif",
             ""
         ],
-        "backBtn": true
+        "backBtn": false
     },
     "page_4": {
         "item": "narrative",
@@ -119,7 +137,7 @@
             "Professor Oak was wise to have a backup plan in case you were late!  ",
             "It's Pikachu! Oak mysteriously warns you that there is a problem with this particular Pikachu. But this doesn't register with you because - “OMG! Finally, a POKEMON!!!!!!!!!!”",
             "assets/page_4.gif",
-            "“Wait! You still seem to be a kid in a candy world. The first day is extremely important for any grown-up pokemon trainer and yet you couldn’t care less to oversleep and miss the chance to get the pokemon of your choice. I doubt whether you would become a sane pokemon trainer at all”, says Dr. Oak in apprehension."
+            "“This Pikachu is not in the best of his shape and I don’t want to put him in irresponsible hands. Prove it to me that you are wise and smart to rise to the situation and train this Pikachu”, remarks Professor Oak with a puzzle."
         ],
         "backBtn": true
     },
@@ -147,11 +165,11 @@
         "item": "slider", 
         "itemCode": "puzzle_2",
         "question": "Balance the poke-money scale to get Pikachu!", 
-        "description": "In the pokemon world, poke-dollars(=100 poke-cents), poke-dimes(=10 poke-cents) and poke-cents are used. The left tray has 7 poke-dollars. How many poke-dimes should you place in the right tray to balance the scale in poke-money value.", 
+        "description": "In the pokemon world, poke-dollars, poke-euros, poke-rupees and poke-yens are used. The left tray has 13 poke-dollars, 5 poke-euros, and 8 poke-rupees. How many poke-yens should you place in the right tray to balance the scale in poke-money value? (Hint: refer to the conversion rates given to you individually)", 
         "imgDir": "/assets/puzzle_2_ques.png", 
-        "min": 50, 
-        "max": 100, 
-        "correct": 70,
+        "min": 1050, 
+        "max": 1150, 
+        "correct": 1099,
         "backBtn": true,
         "errorTitle": "Bad!",
         "errorImgDir": "assets/puzzle_2.gif",
@@ -256,7 +274,7 @@
             "It didn’t irk Pikachu, but he clearly is not getting into that red ball. What is that worrying Pikachu? The pokeball? Or you? Let’s wait and see!",
             "And so you leave home with one last (also necessary) reminder from your mother to change your underwear every day."
         ],
-        "backBtn": true
+        "backBtn": false
     },
     "page_9": {
         "item": "narrative",
@@ -291,10 +309,10 @@
         "itemCode": "puzzle_4",
         "title": "Unlock the Pokedex",
         "question": "Use this code sheet to decipher the given morse code",
-        "description": "What does this encrypted code read? (Enter in numbers) ", 
+        "description": "What does this encrypted code read? The unlock code is the decrypted value times the number of consonants in the English alphabets (in digits). ", 
         "imgDir": "/assets/puzzle_4_ques.PNG",
         "imgDir_sub": "/assets/puzzle_4_sub.png",
-        "correct": "15", 
+        "correct": "315", 
         "backBtn": true,
         "errorTitle": "Psst..",
         "errorImgDir": "assets/puzzle_4.gif",
@@ -329,7 +347,7 @@
             "You: That means.. I'm stupid?",
             "The truth hurts sometimes, Ashy-boy!" 
         ],
-        "backBtn": true
+        "backBtn": false
     },
     "page_11": {
         "item": "narrative",
@@ -382,7 +400,7 @@
             "assets/page_12.gif",
             "You either stupidly reason that you can fly or correctly reason that Spearows can't swim, either way, the result is the same. You and Pikachu are driven underwater by the current."
         ],
-        "backBtn": true
+        "backBtn": false
     },
     "page_13": {
         "item": "narrative",
@@ -476,15 +494,15 @@
         ],
         "objectDescription": [
             "Trapped...",
-            "You steal Misty's bicycle to make your getaway, promising to return it someday.",
-            "The mental strain of operating a bicycle proves too great for you and you crash to the ground as the Spearow moves in for the kill and a thunderstorm dramatically rolls in. ",
+            "You steal Misty's bike to make your getaway, promising to return it someday.",
+            "The mental strain of operating a bike proves too great for you and you crash to the ground as the Spearow moves in for the kill and a thunderstorm dramatically rolls in. ",
             "assets/page_14_cycle.gif",
-            "This inspires the stupid you to stand up with arms stretched wide and declare, 'Spearows, do you know I am? I'm Ash from the town of Pallet.'",
+            "This inspires the stupid you to stand up with arms stretched wide and declare, 'Spearows, do you know who I am? I'm Ash from the town of Pallet.'",
             "'I am destined to be the world's number one Pokemon master. I can't be defeated by the likes of you. I'm going to capture and defeat you all.'",
             "assets/page_14_stand.gif",
             "Well, that’s a dramatic dialogue! But we all know that you can't shoo the Spearows off without the help of Pikachu. So, try hard and prove to Pikachu one last time that you are a trainer worthy enough to be friends with, by solving this puzzle."
         ],
-        "backBtn": true
+        "backBtn": false
     },
     "puzzle_7_narration": {
         "item": "narrative",
@@ -518,8 +536,8 @@
         "question": "Divide and Conquer", 
         "description": "Keep adding the route values for both the paths as you tread forward. Add the two values that you get from Paths 1,2 and pick it on the slider.", 
         "imgDir": "", 
-        "min": 155, 
-        "max": 160, 
+        "min": 140, 
+        "max": 180, 
         "correct": 159, 
         "backBtn": true,
         "errorTitle": "",
@@ -555,7 +573,7 @@
         "item": "end",
         "itemCode": "end_page",
         "title": "Thank You For Playing!",
-        "imgDir": "",
+        "imgDir": "assets/pokemon_pandemic.jpeg",
         "description": "We appreciate the time and effort you've given in trying out and successfully completing our escape room. We've logged the time and click details during your playthrough which you can download by clicking on the button below. We would appreciate it if you could mail a copy of the generated log file to ar9fb@virginia.edu, this would help us with further development. Thank you."
     }
 }
