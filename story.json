@@ -70,7 +70,7 @@
         "description": "Pay attention to the items and the numbers!", 
         "imgDir": "/assets/puzzle_1.PNG", 
         "options": ["/assets/puzzle_1_op1.PNG", "/assets/puzzle_1_op2.PNG", "/assets/puzzle_1_op3.PNG", "/assets/puzzle_1_op4.PNG"], 
-        "correct": "/assets/puzzle_1_op4.png", 
+        "correct": "/assets/puzzle_1_op4.PNG", 
         "backBtn": true,
         "errorTitle": "That's wrong, buddy boy.",
         "errorImgDir": "assets/puzzle_1_wrong.gif",
