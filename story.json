@@ -8,7 +8,8 @@
         "description": "Hello! Welcome to our escape room. The ultimate goal is to solve the puzzles that lie ahead and escape the weird world for good! You and your teammates should join forces to make sure that you solve this course in the minimum amount of time making the least number of mistakes. But most importantly, don't forget to enjoy!",
         "errorTitle": "Come on, your name can't be ___, in other words, blank!",
         "errorImgDir": "",
-        "errorMsg": "You must surely have a name! How about you enter it and try again?"
+        "errorMsg": "You must surely have a name! How about you enter it and try again?",
+        "backBtn": false
     },
     "page_1": {
         "item": "narrative",
@@ -21,7 +22,6 @@
             "info",
             "info",
             "info"
-            
         ],
         "objectDescription": [
             "The Story Begins",
@@ -48,7 +48,6 @@
         "errorTitle": "THAT EARLY!?",
         "errorImgDir": "",
         "errorMsg": "Ash isn't as active as one would expect him to be. How about you try again?"
-
     },
     "page_2": {
         "item": "narrative",
@@ -574,6 +573,8 @@
         "itemCode": "end_page",
         "title": "Thank You For Playing!",
         "imgDir": "assets/pokemon_pandemic.jpeg",
-        "description": "We appreciate the time and effort you've given in trying out and successfully completing our escape room. We've logged the time and click details during your playthrough which you can download by clicking on the button below. We would appreciate it if you could mail a copy of the generated log file to ar9fb@virginia.edu, this would help us with further development. Thank you."
+        "description": "We appreciate the time and effort you've given in trying out and successfully completing our escape room. We've logged the time and click details during your playthrough which you can download by clicking on the button below. We would appreciate it if you could mail a copy of the generated log file to ar9fb@virginia.edu, this would help us with further development. Thank you.", 
+        "backBtn": false
+    
     }
 }

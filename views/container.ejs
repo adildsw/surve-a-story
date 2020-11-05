@@ -7,8 +7,15 @@
         $(document).ready(function() {
             $('.ui.checkbox').checkbox(); // Emable checkbox clicks
 
+            $("#nextBtn").prop("disabled", false);
+            if ("<%=backBtn%>" == "true") {
+                $("#backBtn").prop("disabled", false);
+            }
+
             // Extracts selected answer and performs form validation for progression
             $(document).on("click", "#nextBtn", function() {
+                $("#nextBtn").prop("disabled", true);
+
                 let selection = undefined;
                 let item = "<%=item%>";
                 let itemCode = "<%=itemCode%>";
@@ -64,6 +71,7 @@
 
             // Allows users to return to the previous story segment
             $(document).on("click", "#backBtn", function() {
+                $("#backBtn").prop("disabled", true);
                 $.post("/back", function(response) {
                     document.getElementsByTagName("html")[0].innerHTML = response;
                     window.location = window.location;
