@@ -5,7 +5,7 @@
         "itemCode": "start_page",
         "title": "Pokemon, I choose you!",
         "imgDir": "assets/extra_start.jpg",
-        "description": "Hello! Welcome to our escape room. The ultimate goal is to solve the puzzles that lie ahead and escape the weird world for good! You and your teammates should join forces to make sure that you solve this course in the minimum amount of time making the least number of mistakes. But most importantly, don't forget to enjoy!",
+        "description": "Hello! Welcome to our escape room. The ultimate goal is to solve the puzzles that lie ahead and help the legendary pokemon trainer Ash begin his journey! You and your teammates should join forces to make sure that you solve this course in the minimum amount of time, making the least number of mistakes. But most importantly, don't forget to enjoy!",
         "errorTitle": "Come on, your name can't be ___, in other words, blank!",
         "errorImgDir": "",
         "errorMsg": "You must surely have a name! How about you enter it and try again?",
@@ -32,7 +32,7 @@
             "You finally manage to stumble out of bed very late. Unfortunately, in all the excitement of your dreams, you destroy your pokeball-shaped alarm clock.",
             "Before you begin your adventures, you need to make sure that your alarm clock is set for tomorrow."
         ],
-        "backBtn": true
+        "backBtn": false
     },
     "extra_puzzle_1": {
         "item": "mcq",
@@ -539,8 +539,8 @@
         "max": 180, 
         "correct": 159, 
         "backBtn": true,
-        "errorTitle": "",
-        "errorImgDir": "",
+        "errorTitle": "Almost there, but not quite...",
+        "errorImgDir": "assets/puzzle_7_error.gif",
         "errorMsg": "That’s it. We are sending Pikachu to Gary! You boast that you are better than Gary and yet you fail to impress your first pokemon to hang on with you."
     },
     "page_15": {
