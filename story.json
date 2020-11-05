@@ -291,7 +291,7 @@
         "title": "Unlock the Pokedex",
         "question": "Use this code sheet to decipher the given morse code",
         "description": "What does this encrypted code read? (Enter in numbers) ", 
-        "imgDir": "/assets/puzzle_4_ques.png",
+        "imgDir": "/assets/puzzle_4_ques.PNG",
         "imgDir_sub": "/assets/puzzle_4_sub.png",
         "correct": "15", 
         "backBtn": true,
