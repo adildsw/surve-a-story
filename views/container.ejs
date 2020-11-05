@@ -15,7 +15,10 @@
 
                 // Extracting input
                 console.log(itemCode);
-                if (item == "mcq") {
+                if (item == "mcq" ) {
+                    selection = $('#mcqInput').find('[name="0"]:checked').val();
+                }
+                else if (item == "mcq_img_options" ) {
                     selection = $('#mcqInput').find('[name="0"]:checked').val();
                 }
                 else if (item == "multimcq") {
@@ -97,7 +100,8 @@
 
                     <% if (item == "mcq") { %>
                         <!-- MCQ Item -->
-                        <h2 class="ui header"><%=question%></h2>
+                        <h2 class="ui header"><%=title%></h2>
+                        <h4 class="ui header"><%=question%></h4>
                         <% if (imgDir != "" ) { %>
                             <img class="ui fluid image" src="<%=imgDir%>">
                         <% } %>
@@ -109,12 +113,12 @@
                                 <div class="field">
                                     <div class="ui radio checkbox">
                                     <input type="radio" name="0" class="hidden" value="<%=options[i]%>">
-                                    <label><%=options[i]%></label>
+                                    <label><img class="ui fluid image" src="<%=options[i]%>"></label>
                                     </div>
                                 </div>
                             <% } %>
                         </div>
-                    
+
                     <% } else if (item == "multimcq") { %>
                         <!-- Multi MCQ Item -->
                         <input type="hidden" value="<%=question.length%>" id="mcqcount">
@@ -158,15 +162,19 @@
 
                     <% } else if (item == "written") { %>
                         <!-- Written Answer Item -->
-                        <h2 class="ui header"><%=question%></h2>
+                        <h2 class="ui header"><%=title%></h2>
+                        <h4 class="ui header"><%=question%></h4>
                         <% if (imgDir != "" ) { %>
                             <img class="ui fluid image" src="<%=imgDir%>">
                         <% } %>
                         <% if (description != "") { %>
                             <p><%=description%></p>
                         <% } %>
+                        <% if (imgDir_sub != "" ) { %>
+                            <img class="ui fluid image" src="<%=imgDir_sub%>">
+                        <% } %>
                         <div class="ui input labeled fluid focus">
-                            <input type="text" id="writtenInput" style="margin-bottom: 15px;" placeholder="Your Answer">
+                            <input type="text" id="writtenInput" style="margin-top: 15px; margin-bottom: 15px;" placeholder="Your Answer">
                         </div>
                     
                     <% } else if (item == "narrative") { %>
