@@ -1,5 +1,5 @@
 {
-    "sequence": ["start_page", "page_1", "extra_puzzle_1", "page_2", "puzzle_1",  "page_3", "page_4", "puzzle_2", "page_6", "page_7", "puzzle_3", "page_8", "page_9", "puzzle_4", "page_10", "page_11", "puzzle_5", "page_12","page_13", "puzzle_6_narration", "puzzle_6", "page_14", "puzzle_7_narration","puzzle_7", "page_15", "end_page"],
+    "sequence": ["start_page", "page_1", "extra_puzzle_1", "page_2", "puzzle_1",  "page_3", "page_4", "puzzle_2", "page_6", "page_7", "puzzle_3", "page_8", "page_9", "puzzle_4", "page_10", "page_11", "puzzle_5", "page_12","page_13", "puzzle_6_narration", "puzzle_6", "page_14", "puzzle_7_narration","puzzle_7", "page_15", "end_page_1"],
     "start_page": {
         "item": "start",
         "itemCode": "start_page",
@@ -21,7 +21,8 @@
             "info",
             "info",
             "info",
-            "info"
+            "info",
+			"info"
         ],
         "objectDescription": [
             "The Story Begins",
@@ -30,7 +31,8 @@
             "You are excited and sleepless ever since you heard from your mother that you will be getting a NEW POKEMON from Dr.Oak tomorrow.",
             "Eventually, you drift off to dreamland, but your (tiny, tiny) mind is still stuck on its single track – Pokemon.",
             "You finally manage to stumble out of bed very late. Unfortunately, in all the excitement of your dreams, you destroy your pokeball-shaped alarm clock.",
-            "Before you begin your adventures, you need to make sure that your alarm clock is set for tomorrow."
+            "Before you begin your adventures, you need to make sure that your alarm clock is set for tomorrow.",
+			"(PS, tomorrow is a weekend, so Ash wants to wake up as late as possible!)"
         ],
         "backBtn": false
     },
@@ -42,7 +44,7 @@
         "description": "Use the clues given to you to find out Ash's daily wake up time!", 
         "imgDir": "/assets/extra_puzzle_1.jpg", 
         "optionType": "text",
-        "options": ["6:00AM", "8:45AM", "11:34AM", "12:35PM", "12:00PM"], 
+        "options": ["6:00AM", "8:45AM", "11:34AM", "12:35PM", "10:00AM"], 
         "correct":  "12:35PM", 
         "backBtn": true,
         "errorTitle": "THAT EARLY!?",
@@ -164,7 +166,7 @@
         "item": "slider", 
         "itemCode": "puzzle_2",
         "question": "Balance the poke-money scale to get Pikachu!", 
-        "description": "In the pokemon world, poke-dollars, poke-euros, poke-rupees and poke-yens are used. The left tray has 13 poke-dollars, 5 poke-euros, and 8 poke-rupees. How many poke-yens should you place in the right tray to balance the scale in poke-money value? (Hint: refer to the conversion rates given to you individually)", 
+        "description": "In the pokemon world, poke-dollars, poke-euros, poke-rupees and poke-yens are used. The left tray has 13 poke-dollars, 5 poke-euros, and 8 poke-rupees. How many poke-yens should you place in the right tray to balance the scale in poke-money value? (Hint: 1PD = 7PY, 1PE = 8PR, 1PR = 3PD)", 
         "imgDir": "/assets/puzzle_2_ques.png", 
         "min": 1050, 
         "max": 1150, 
@@ -575,6 +577,13 @@
         "imgDir": "assets/pokemon_pandemic.jpeg",
         "description": "We appreciate the time and effort you've given in trying out and successfully completing our escape room. We've logged the time and click details during your playthrough which you can download by clicking on the button below. We would appreciate it if you could mail a copy of the generated log file to ar9fb@virginia.edu, this would help us with further development. Thank you.", 
         "backBtn": false
-    
+    },
+	"end_page_1": {
+        "item": "end",
+        "itemCode": "end_page",
+        "title": "Thank You For Playing!",
+        "imgDir": "",
+        "description": "We appreciate the time and effort you've given in trying out and successfully completing our escape room. We've logged the time and click details during your playthrough which you can download by clicking on the button below. We would appreciate it if you could mail a copy of the generated log file to ar9fb@virginia.edu, this would help us with further development. Thank you.", 
+        "backBtn": false
     }
 }
