@@ -1,11 +1,9 @@
 const express = require('express');
-const app = express();
+const app = express({strict:true});
 const fs = require('fs');
 const router = express.Router();
 const bodyParser = require('body-parser');
 const converter = require('convert-array-to-csv');
-
-const port = process.env.PORT || 8888;
 
 app.set('view engine', 'ejs');
 app.use(express.static("public"));
@@ -29,6 +27,14 @@ let incorrectAttempts = 0;
 let logHeader = ["Time Elapsed", "Item Code", "Response", "Correct?"];
 let logs = [];
 let logsCSV;
+
+// Add base url to all views middleware
+router.use(function(request, response, next){
+  response.locals = {
+    baseUrl: request.baseUrl + "/"
+  }
+  next();
+})
 
 // This route displays the story content
 router.get('/', function(request, response) {
@@ -107,7 +113,7 @@ router.post('/next', function(request, response) {
     }
 
     // Redirecting to story-progression/incorrect-input page
-    response.redirect("/");
+    response.redirect(request.baseUrl);
 });
 
 // This route allows returning to the previous story segment
@@ -119,7 +125,7 @@ router.post('/back', function(request, response) {
     timeElapsed = currentTime - startTime;
     logs.push([timeElapsed, "BACK", "", true]);
 
-    response.redirect("/");
+    response.redirect(request.baseUrl);
 });
 
 // This route allows downloading the playthrough logs
@@ -133,7 +139,7 @@ router.post('/download', function(request, response) {
 // This route disables the incorrect-input error mode
 router.get('/retry', function(request, response) {
     incorrect = false;
-    response.redirect("/");
+    response.redirect(request.baseUrl);
 });
 
 // This route resets progress
@@ -144,10 +150,9 @@ router.get('/reset', function(request, response) {
     timeElapsed = undefined;
     logs = [];
     incorrectAttempts = 0;
-    response.redirect("/");
+    response.redirect(request.baseUrl);
 })
 
 app.use('/', router);
-app.listen(port, function() {
-    console.log("Server Running at Port " + port);
-});
+
+module.exports = app;

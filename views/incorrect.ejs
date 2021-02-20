@@ -7,7 +7,7 @@
         $(document).ready(function() {
             // Retry button functionality
             $(document).on("click", "#retryBtn", function() {
-                $.get("/retry", function(response) {
+                $.get("retry", function(response) {
                     document.getElementsByTagName("html")[0].innerHTML = response;
                     window.location = window.location;
                 });

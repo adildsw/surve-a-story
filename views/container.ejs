@@ -51,7 +51,7 @@
 
                 // AJAX POST request for form validation and progression
                 var params = {itemCode: "<%=itemCode%>", selection: selection};
-                $.post("/next", params, function(response) {
+                $.post("next", params, function(response) {
                     document.getElementsByTagName("html")[0].innerHTML = response;
                     window.location = window.location;
                 });
@@ -72,7 +72,7 @@
             // Allows users to return to the previous story segment
             $(document).on("click", "#backBtn", function() {
                 $("#backBtn").prop("disabled", true);
-                $.post("/back", function(response) {
+                $.post("back", function(response) {
                     document.getElementsByTagName("html")[0].innerHTML = response;
                     window.location = window.location;
                 });
@@ -80,7 +80,7 @@
 
             // Button to download playthrough log
             $(document).on("click", "#downloadBtn", function() {
-                $.post("/download", function(response) {
+                $.post("download", function(response) {
                     var blob = new Blob([response]);
                     var link = document.createElement("a");
                     link.href = window.URL.createObjectURL(blob);
@@ -108,7 +108,7 @@
                         <h2 class="ui header"><%=title%></h2>
                         <h4 class="ui header"><%=question%></h4>
                         <% if (imgDir != "" ) { %>
-                            <img class="ui fluid image" src="<%=imgDir%>">
+                            <img class="ui fluid image" src="<%=baseUrl+imgDir%>">
                         <% } %>
                         <% if (description != "") { %>
                             <p><%=description%></p>
@@ -120,7 +120,7 @@
                                     <input type="radio" name="0" class="hidden" value="<%=options[i]%>">
                                     <label>
                                         <% if (optionType == "img") { %>
-                                            <img class="ui fluid image" src="<%=options[i]%>">
+                                            <img class="ui fluid image" src="<%=baseUrl+options[i]%>">
                                         <% } else { %>
                                             <%=options[i]%>
                                         <% } %>
@@ -136,7 +136,7 @@
                         <% for (var j = 0; j < question.length; j++) { %>
                             <h2 class="ui header"><%=question[j]%></h2>
                             <% if (imgDir[j] != "" ) { %>
-                                <img class="ui fluid image" src="<%=imgDir[j]%>">
+                                <img class="ui fluid image" src="<%=baseUrl+imgDir[j]%>">
                             <% } %>
                             <% if (description[j] != "") { %>
                                 <p><%=description[j]%></p>
@@ -160,7 +160,7 @@
                         <!-- Range Slider Item -->
                         <h2 class="ui header"><%=question%></h2>
                         <% if (imgDir != "" ) { %>
-                            <img class="ui fluid image" src="<%=imgDir%>">
+                            <img class="ui fluid image" src="<%=baseUrl+imgDir%>">
                         <% } %>
                         <% if (description != "") { %>
                             <p><%=description%></p>
@@ -176,13 +176,13 @@
                         <h2 class="ui header"><%=title%></h2>
                         <h4 class="ui header"><%=question%></h4>
                         <% if (imgDir != "" ) { %>
-                            <img class="ui fluid image" src="<%=imgDir%>">
+                            <img class="ui fluid image" src="<%=baseUrl+imgDir%>">
                         <% } %>
                         <% if (description != "") { %>
                             <p><%=description%></p>
                         <% } %>
                         <% if (imgDir_sub != "" ) { %>
-                            <img class="ui fluid image" src="<%=imgDir_sub%>">
+                            <img class="ui fluid image" src="<%=baseUrl+imgDir_sub%>">
                         <% } %>
                         <div class="ui input labeled fluid focus">
                             <input type="text" id="writtenInput" style="margin-top: 15px; margin-bottom: 15px;" placeholder="Your Answer">
@@ -196,7 +196,7 @@
                             <% } else if (objectType[i] == "info" ) { %>
                                 <p><%=objectDescription[i]%></p>
                             <% } else if (objectType[i] == "image" ) { %>
-                                <img class="ui fluid image" src="<%=objectDescription[i]%>">
+                                <img class="ui fluid image" src="<%=baseUrl+objectDescription[i]%>">
                             <% } %>
                         <% } %>
 
@@ -204,7 +204,7 @@
                         <!-- Start Item -->
                         <h2 class="ui header centered"><%=title%></h2>
                         <% if (imgDir != "") { %>
-                            <img class="ui fluid image" src="<%=imgDir%>">
+                            <img class="ui fluid image" src="<%=baseUrl+imgDir%>">
                         <% } %>
                         <% if (description != "") { %>
                             <p><%=description%></p>
@@ -240,7 +240,7 @@
                         <div class="ui horizontal divider">•</div>
                         <h2 class="ui header centered"><%=title%></h2>
                         <% if (imgDir != "") { %>
-                            <img class="ui fluid image" src="<%=imgDir%>">
+                            <img class="ui fluid image" src="<%=baseUrl+imgDir%>">
                         <% } %>
                         <% if (description != "") { %>
                             <p><%=description%></p>
