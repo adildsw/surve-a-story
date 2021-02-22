@@ -1,32 +1,32 @@
+'use strict';
 const express = require('express');
 const app = express({strict:true});
 const fs = require('fs');
 const router = express.Router();
 const bodyParser = require('body-parser');
 const converter = require('convert-array-to-csv');
-
+const session = require('express-session');
+const config = require('./config');
+var MemoryStore = require('memorystore')(session);
 app.set('view engine', 'ejs');
 app.use(express.static("public"));
 app.use(bodyParser.json());
 app.use(express.urlencoded({extended: true}));
+var sess = {
+    cookie: {maxAge: 10800},
+    store: new MemoryStore({
+        checkPeriod: 10800 // prune expired entries every 24h
+    }),
+    resave: false,
+    secret: config.cookie_secret,
+    saveUninitialized: false
+}
+app.use(session(sess))
 
 let storyRaw = fs.readFileSync("story.json");
 let story = JSON.parse(storyRaw); // Stores story data
-let storyIdx = 0; // Stores story progress
 
-let incorrect = false; // Dictates whether incorrect-input error message should be displayed
-
-// Stores playthrough time related information
-let startTime;
-let currentTime;
-let endTime;
-let timeElapsed;
-
-// For collecting playthrough related stats
-let incorrectAttempts = 0;
 let logHeader = ["Time Elapsed", "Item Code", "Response", "Correct?"];
-let logs = [];
-let logsCSV;
 
 // Add base url to all views middleware
 router.use(function(request, response, next){
@@ -34,25 +34,46 @@ router.use(function(request, response, next){
     baseUrl: request.baseUrl + "/"
   }
   next();
+});
+
+const session_defaults = {
+  storyIdx: 0, // Stores story progress
+  incorrect: false, // Dictates whether incorrect-input error message should be displayed
+  // Stores playthrough time related information
+  startTime: undefined,
+  timeElapsed: undefined,
+
+  // For collecting playthrough related stats
+  incorrectAttempts: 0,
+  logs: []
+}
+
+// setup progression variables if they don't exist
+router.use(function(request, response, next){
+    const sess_copy = {...request.session};
+    var sess = Object.assign(request.session, session_defaults,sess_copy);
+    next();
 })
 
 // This route displays the story content
 router.get('/', function(request, response) {
-    var itemCodeToLoad = story["sequence"][storyIdx];
-    if (!incorrect) {
+    var sess = request.session;
+    var itemCodeToLoad = story["sequence"][sess.storyIdx];
+    if (!sess.incorrect) {
         if (story[itemCodeToLoad]["item"] == "end") {
-            story[itemCodeToLoad]["timeTaken"] = Math.round(timeElapsed/1000);
-            story[itemCodeToLoad]["incorrectAttempts"] = incorrectAttempts;
+            story[itemCodeToLoad]["timeTaken"] = Math.round(sess.timeElapsed/1000);
+            story[itemCodeToLoad]["incorrectAttempts"] = sess.incorrectAttempts;
         }
         response.render("container", story[itemCodeToLoad]);
     }
     else {
         response.render("incorrect", story[itemCodeToLoad]);
-    } 
+    }
 });
 
 // This route validates the puzzle input and proceeds accordingly
 router.post('/next', function(request, response) {
+    var sess = request.session;
     var itemCode = request.body.itemCode;
     var selection = request.body.selection;
     var item = story[itemCode]["item"];
@@ -79,36 +100,37 @@ router.post('/next', function(request, response) {
     }
 
     // Capturing playthrough logs
-    currentTime = new Date();
-    timeElapsed = currentTime - startTime;
-    if (isNaN(timeElapsed)) {
-        timeElapsed = 0;
+    const currentTime = new Date();
+    sess.timeElapsed = currentTime - sess.startTime;
+    if (isNaN(sess.timeElapsed)) {
+        sess.timeElapsed = 0;
     }
     if (typeof(selection) == "object") {
         selection = selection.join("|");
     }
-    logs.push([timeElapsed, itemCode, selection, passed]);
+    sess.logs.push([sess.timeElapsed, itemCode, selection, passed]);
 
     // Proceeding story if answer is correct, otherwise displaying error message
     if (passed) {
-        storyIdx++; // Progressing story
+        sess.storyIdx++; // Progressing story
 
         // Starting/stopping playthrough timer
         if (item == "start") {
-            startTime = new Date();
+            sess.startTime = new Date();
         }
-        else if (story[story["sequence"][storyIdx]]["item"] == "end" ) {
-            endTime = new Date();
-            timeElapsed = endTime - startTime;
-            logs.push([timeElapsed, story[story["sequence"][storyIdx]]["itemCode"], "", passed]);
+        else if (story[story["sequence"][sess.storyIdx]]["item"] == "end" ) {
+            // TODO: Remove time elapsed calculation here
+            const endTime = new Date();
+            sess.timeElapsed = endTime - sess.startTime;
+            sess.logs.push([sess.timeElapsed, story[story["sequence"][sess.storyIdx]]["itemCode"], "", passed]);
         }
-    } 
+    }
     else {
-        incorrect = true; // Enabling incorrect-input form
+        sess.incorrect = true; // Enabling incorrect-input form
 
         // Increasing incorrect-input count if playthrough has begun
         if (item != "start") {
-            incorrectAttempts++;
+            sess.incorrectAttempts++;
         }
     }
 
@@ -118,19 +140,20 @@ router.post('/next', function(request, response) {
 
 // This route allows returning to the previous story segment
 router.post('/back', function(request, response) {
-    storyIdx--; // Reverting to previous story segment
+    var sess = request.session;
+    sess.storyIdx--; // Reverting to previous story segment
 
     // Capturing playthrough logs for back navigation
-    currentTime = new Date();
-    timeElapsed = currentTime - startTime;
-    logs.push([timeElapsed, "BACK", "", true]);
+    const currentTime = new Date();
+    sess.timeElapsed = currentTime - sess.startTime;
+    sess.logs.push([sess.timeElapsed, "BACK", "", true]);
 
     response.redirect(request.baseUrl);
 });
 
 // This route allows downloading the playthrough logs
 router.post('/download', function(request, response) {
-    logsCSV = converter.convertArrayToCSV(logs, {header: logHeader, separator: ","});
+    const logsCSV = converter.convertArrayToCSV(sess.logs, {header: logHeader, separator: ","});
     response.setHeader('Content-disposition', 'attachment; filename=playthrough-log.csv');
     response.set('Content-type', 'text/csv');
     response.status(200).send(logsCSV);
@@ -138,18 +161,13 @@ router.post('/download', function(request, response) {
 
 // This route disables the incorrect-input error mode
 router.get('/retry', function(request, response) {
-    incorrect = false;
+    sess.incorrect = false;
     response.redirect(request.baseUrl);
 });
 
 // This route resets progress
 router.get('/reset', function(request, response) {
-    storyIdx = 0;
-    startTime = undefined;
-    endTime = undefined;
-    timeElapsed = undefined;
-    logs = [];
-    incorrectAttempts = 0;
+    Object.assign(request.session,session_defaults);
     response.redirect(request.baseUrl);
 })
 
