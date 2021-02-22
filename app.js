@@ -66,6 +66,9 @@ module.exports = (function(options_args){
   router.use(function(request, response, next){
       const sess_copy = {...request.session};
       var sess = Object.assign(request.session, session_defaults,sess_copy);
+      // Unserealize dates
+      sess.startTime = (sess.startTime)?new Date(sess.startTime):undefined;
+      sess.timeElapsed = (sess.timeElapsed)?new Date(sess.timeElapsed):undefined;
       next();
   })
 
@@ -75,7 +78,8 @@ module.exports = (function(options_args){
       var itemCodeToLoad = story["sequence"][sess.storyIdx];
       if (!sess.incorrect) {
           if (story[itemCodeToLoad]["item"] == "end") {
-              story[itemCodeToLoad]["timeTaken"] = Math.round(sess.timeElapsed/1000);
+              var minutes = Math.floor(sess.timeElapsed/60000);
+              story[itemCodeToLoad]["timeTaken"] = minutes + ":" + Math.round((sess.timeElapsed - minutes*60000)/1000);
               story[itemCodeToLoad]["incorrectAttempts"] = sess.incorrectAttempts;
           }
           response.render("container", story[itemCodeToLoad]);
@@ -118,6 +122,7 @@ module.exports = (function(options_args){
       sess.timeElapsed = currentTime - sess.startTime;
       if (isNaN(sess.timeElapsed)) {
           sess.timeElapsed = 0;
+          sess.startTime = new Date();
       }
       if (typeof(selection) == "object") {
           selection = selection.join("|");
@@ -175,7 +180,7 @@ module.exports = (function(options_args){
 
   // This route disables the incorrect-input error mode
   router.get('/retry', function(request, response) {
-      sess.incorrect = false;
+      request.session.incorrect = false;
       response.redirect(request.baseUrl);
   });
 
