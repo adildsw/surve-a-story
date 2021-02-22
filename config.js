@@ -1,4 +1,4 @@
 'use strict';
 module.exports = {
-  cookie_secret: "SECRET"
+  cookie_secret: process.env.COOKIE_SECRET || "SECRET"
 };
