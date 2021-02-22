@@ -7,9 +7,11 @@ const bodyParser = require('body-parser');
 const converter = require('convert-array-to-csv');
 const session = require('express-session');
 const config = require('./config');
+const path = require('path');
 var MemoryStore = require('memorystore')(session);
 app.set('view engine', 'ejs');
-app.use(express.static("public"));
+app.set('views', path.join(__dirname, '/views'));
+app.use(express.static(path.join(__dirname, "public")));
 app.use(bodyParser.json());
 app.use(express.urlencoded({extended: true}));
 var sess = {
@@ -23,7 +25,7 @@ var sess = {
 }
 app.use(session(sess))
 
-let storyRaw = fs.readFileSync("story.json");
+let storyRaw = fs.readFileSync(path.join(__dirname, "story.json"));
 let story = JSON.parse(storyRaw); // Stores story data
 
 let logHeader = ["Time Elapsed", "Item Code", "Response", "Correct?"];
