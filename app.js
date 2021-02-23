@@ -154,7 +154,7 @@ module.exports = (function(options_args){
       }
 
       // Redirecting to story-progression/incorrect-input page
-      response.redirect(request.baseUrl);
+      response.redirect(request.baseUrl + "/");
   });
 
   // This route allows returning to the previous story segment
@@ -167,7 +167,7 @@ module.exports = (function(options_args){
       sess.timeElapsed = currentTime - sess.startTime;
       sess.logs.push([sess.timeElapsed, "BACK", "", true]);
 
-      response.redirect(request.baseUrl);
+      response.redirect(request.baseUrl + "/");
   });
 
   // This route allows downloading the playthrough logs
@@ -181,13 +181,13 @@ module.exports = (function(options_args){
   // This route disables the incorrect-input error mode
   router.get('/retry', function(request, response) {
       request.session.incorrect = false;
-      response.redirect(request.baseUrl);
+      response.redirect(request.baseUrl + "/");
   });
 
   // This route resets progress
   router.get('/reset', function(request, response) {
       Object.assign(request.session,session_defaults);
-      response.redirect(request.baseUrl);
+      response.redirect(request.baseUrl + "/");
   })
 
   app.use('/', router);
