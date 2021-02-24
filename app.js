@@ -17,7 +17,8 @@ module.exports = (function(options_args){
   const options_default = {
     templateViews: path.join(__dirname, '/views'),
     assets: path.join(__dirname, "public"),
-    story: path.join(__dirname, "story.json")
+    story: path.join(__dirname, "story.json"),
+    name: "surveStory"
   };
   const options = Object.assign({}, options_default, options_args,);
 
@@ -27,13 +28,17 @@ module.exports = (function(options_args){
   app.use(bodyParser.json());
   app.use(express.urlencoded({extended: true}));
   var sess = {
-      cookie: {maxAge: 10800000},
+      cookie: {
+        maxAge: 10800000,
+        sameSite: true
+      },
       store: new MemoryStore({
           checkPeriod: 10800000 // prune expired entries every 24h
       }),
       resave: false,
       secret: config.cookie_secret,
-      saveUninitialized: false
+      saveUninitialized: false,
+      name: options.name,
   }
   app.use(session(sess))
 
