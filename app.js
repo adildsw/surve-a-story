@@ -27,9 +27,9 @@ module.exports = (function(options_args){
   app.use(bodyParser.json());
   app.use(express.urlencoded({extended: true}));
   var sess = {
-      cookie: {maxAge: 10800},
+      cookie: {maxAge: 10800000},
       store: new MemoryStore({
-          checkPeriod: 10800 // prune expired entries every 24h
+          checkPeriod: 10800000 // prune expired entries every 24h
       }),
       resave: false,
       secret: config.cookie_secret,
