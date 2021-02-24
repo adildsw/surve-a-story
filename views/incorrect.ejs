@@ -1,7 +1,7 @@
-<!DOCTYPE html> 
-<html> 
+<!DOCTYPE html>
+<html>
 
-<head> 
+<head>
     <%- include("header") %>
     <script>
         $(document).ready(function() {
@@ -21,25 +21,25 @@
             });
         });
     </script>
-</head> 
-  
-<body> 
+</head>
+
+<body>
     <div class="ui middle aligned grid">
         <div class="eight column wide">
             <div class="ui raised very padded text container segment">
                 <div class="ui form" id="module">
                     <h2 class="ui header">
-                        <% if (errorTitle != "") { %>
+                        <% if (errorTitle) { %>
                             <%=errorTitle%>
                         <% } else { %>
                             Oops, that seems incorrect.
                         <% } %>
                     </h2>
-                    <% if (errorImgDir != "") { %>
+                    <% if (errorImgDir) { %>
                         <img class="ui fluid image" src="<%=errorImgDir%>">
                     <% } %>
                     <p>
-                        <% if (errorMsg != "") { %>
+                        <% if (errorMsg) { %>
                             <%=errorMsg%>
                         <% } else { %>
                             The input(s) you made is/are incorrect. How about you try again?

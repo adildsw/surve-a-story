@@ -87,10 +87,34 @@ module.exports = (function(options_args){
               story[itemCodeToLoad]["timeTaken"] = minutes + ":" + Math.round((sess.timeElapsed - minutes*60000)/1000);
               story[itemCodeToLoad]["incorrectAttempts"] = sess.incorrectAttempts;
           }
-          response.render("container", story[itemCodeToLoad]);
+          const containerViewDefaultValues = {
+            item: '',
+            title: 'Untitled',
+            question: 'No Qu',
+            imgDir: '',
+            description: '',
+            optionType: '',
+            options: [],
+            min: 0,
+            max: 0,
+            imgDir_sub: '',
+            objectType: [],
+            objectDescription: [],
+            timeTaken: 0,
+            incorrectAttempts: 0,
+            backBtn: false
+          }
+          const templateVars = Object.assign(containerViewDefaultValues, story[itemCodeToLoad])
+          response.render("container", templateVars);
       }
       else {
-          response.render("incorrect", story[itemCodeToLoad]);
+          const incorrectViewDefaultValues = {
+            errorTitle: '',
+            errorImgDir: '',
+            errorMsg: ''
+          }
+          const templateVars = Object.assign(incorrectViewDefaultValues, story[itemCodeToLoad])
+          response.render("incorrect", templateVars);
       }
   });
 

@@ -1,7 +1,7 @@
-<!DOCTYPE html> 
-<html> 
-  
-<head> 
+<!DOCTYPE html>
+<html>
+
+<head>
     <%- include("header") %>
     <script>
         $(document).ready(function() {
@@ -43,7 +43,7 @@
                 else if (item == "narrative" || item == "end") {
                     selection = true;
                 }
-                
+
                 // Null result cleanup
                 if (selection == "") {
                     selection = undefined;
@@ -88,16 +88,16 @@
                     link.click();
                 });
             })
-            
+
             // Dynamically display the slider selection value on slider change
             $("#sliderInput").on('input', function() {
                 $("#sliderVal").text($(this).val());
             });
         });
     </script>
-</head> 
-  
-<body> 
+</head>
+
+<body>
     <div class="ui middle aligned grid">
         <div class="eight column wide">
             <div class="ui raised very padded text container segment">
@@ -107,10 +107,10 @@
                         <!-- MCQ Item -->
                         <h2 class="ui header"><%=title%></h2>
                         <h4 class="ui header"><%=question%></h4>
-                        <% if (imgDir != "" ) { %>
+                        <% if (imgDir) { %>
                             <img class="ui fluid image" src="<%=baseUrl+imgDir%>">
                         <% } %>
-                        <% if (description != "") { %>
+                        <% if (description) { %>
                             <p><%=description%></p>
                         <% } %>
                         <div class="grouped fields" id="mcqInput">
@@ -135,10 +135,10 @@
                         <input type="hidden" value="<%=question.length%>" id="mcqcount">
                         <% for (var j = 0; j < question.length; j++) { %>
                             <h2 class="ui header"><%=question[j]%></h2>
-                            <% if (imgDir[j] != "" ) { %>
+                            <% if (imgDir[j]) { %>
                                 <img class="ui fluid image" src="<%=baseUrl+imgDir[j]%>">
                             <% } %>
-                            <% if (description[j] != "") { %>
+                            <% if (description[j]) { %>
                                 <p><%=description[j]%></p>
                             <% } %>
                             <div class="grouped fields" id="mcqInput<%=j%>">
@@ -159,10 +159,10 @@
                     <% } else if (item == "slider") { %>
                         <!-- Range Slider Item -->
                         <h2 class="ui header"><%=question%></h2>
-                        <% if (imgDir != "" ) { %>
+                        <% if (imgDir) { %>
                             <img class="ui fluid image" src="<%=baseUrl+imgDir%>">
                         <% } %>
-                        <% if (description != "") { %>
+                        <% if (description) { %>
                             <p><%=description%></p>
                         <% } %>
                         <div class="inline fields">
@@ -175,19 +175,19 @@
                         <!-- Written Answer Item -->
                         <h2 class="ui header"><%=title%></h2>
                         <h4 class="ui header"><%=question%></h4>
-                        <% if (imgDir != "" ) { %>
+                        <% if (imgDir) { %>
                             <img class="ui fluid image" src="<%=baseUrl+imgDir%>">
                         <% } %>
-                        <% if (description != "") { %>
+                        <% if (description) { %>
                             <p><%=description%></p>
                         <% } %>
-                        <% if (imgDir_sub != "" ) { %>
+                        <% if (imgDir_sub) { %>
                             <img class="ui fluid image" src="<%=baseUrl+imgDir_sub%>">
                         <% } %>
                         <div class="ui input labeled fluid focus">
                             <input type="text" id="writtenInput" style="margin-top: 15px; margin-bottom: 15px;" placeholder="Your Answer">
                         </div>
-                    
+
                     <% } else if (item == "narrative") { %>
                         <!-- Narrative Item -->
                         <% for (var i = 0; i < objectType.length; i++) { %>
@@ -203,24 +203,24 @@
                     <% } else if (item == "start") { %>
                         <!-- Start Item -->
                         <h2 class="ui header centered"><%=title%></h2>
-                        <% if (imgDir != "") { %>
+                        <% if (imgDir) { %>
                             <img class="ui fluid image" src="<%=baseUrl+imgDir%>">
                         <% } %>
-                        <% if (description != "") { %>
+                        <% if (description) { %>
                             <p><%=description%></p>
                         <% } %>
                         <p>Please enter your name to continue.</p>
                         <div class="ui input labeled fluid focus">
                             <input type="text" id="startInput" style="margin-bottom: 15px;" placeholder="Your Name">
                         </div>
-                    
+
                     <% } else if (item == "end") { %>
                         <!-- End Item -->
                         <h2 class="ui header centered">Your Playthrough Stats</h2>
                         <div class="ui two statistics fluid">
                             <div class="statistic">
                                 <div class="value">
-                                    <i class="clock outline icon"></i> 
+                                    <i class="clock outline icon"></i>
                                     <%=timeTaken%>
                                   </div>
                                   <div class="label">
@@ -229,7 +229,7 @@
                             </div>
                             <div class="statistic">
                                 <div class="value">
-                                    <i class="close icon"></i> 
+                                    <i class="close icon"></i>
                                     <%=incorrectAttempts%>
                                   </div>
                                   <div class="label">
@@ -239,10 +239,10 @@
                         </div>
                         <div class="ui horizontal divider">•</div>
                         <h2 class="ui header centered"><%=title%></h2>
-                        <% if (imgDir != "") { %>
+                        <% if (imgDir) { %>
                             <img class="ui fluid image" src="<%=baseUrl+imgDir%>">
                         <% } %>
-                        <% if (description != "") { %>
+                        <% if (description) { %>
                             <p><%=description%></p>
                         <% } %>
                     <% } %>
