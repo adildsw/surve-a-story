@@ -40,12 +40,12 @@
         "item": "mcq",
         "itemCode": "extra_puzzle_1",
         "title": "Help Ash in setting the alarm!",
-        "question": "What time does Ash set the alarm to?", 
-        "description": "Use the clues given to you to find out Ash's daily wake up time!", 
-        "imgDir": "/assets/extra_puzzle_1.jpg", 
+        "question": "What time does Ash set the alarm to?",
+        "description": "Use the clues given to you to find out Ash's daily wake up time!",
+        "imgDir": "assets/extra_puzzle_1.jpg",
         "optionType": "text",
-        "options": ["6:00AM", "8:45AM", "11:34AM", "12:35PM", "10:00AM"], 
-        "correct":  "12:35PM", 
+        "options": ["6:00AM", "8:45AM", "11:34AM", "12:35PM", "10:00AM"],
+        "correct":  "12:35PM",
         "backBtn": true,
         "errorTitle": "THAT EARLY!?",
         "errorImgDir": "",
@@ -65,32 +65,32 @@
             "image",
             "info",
             "info"
-            
+
         ],
         "objectDescription": [
             "Gary Oak, your foe for life!",
             "You rush down the well-beaten path between your house and the good professor Dr. Oak’s lab while still in your nightclothes. You finally arrive at Dr. Oak’s Pokemon Lab and squeeze through a squad of cheerleaders that have assembled there for some reason, and crash headlong into the single greatest enemy of your life: Gary Oak!",
             "assets/page_2_ash_arrives.gif",
-            "It appears that the assembled cheerleaders and roaring crowd are there to see off Pallet Town's most promising young trainer: Gary Oak, grandson to the celebrated professor. ", 
-            "“Hey, watch where you're going kid! Well, you must be Ash. You look excited to get a pokemon today and yet you end up here in your night pants an hour late. At least, you get a chance to meet me!”, Gary ridicules you. ", 
-            "“I am not a kid and I will become the best pokemon trainer the world has ever seen!”, you rebut Gary. ", 
-            "“Save your false dreams for another night’s sleep. I already beat you to get my first pokemon and I will be the best pokemon trainer ever on the face of the earth”, says Gary with a smirk on his face.", 
+            "It appears that the assembled cheerleaders and roaring crowd are there to see off Pallet Town's most promising young trainer: Gary Oak, grandson to the celebrated professor. ",
+            "“Hey, watch where you're going kid! Well, you must be Ash. You look excited to get a pokemon today and yet you end up here in your night pants an hour late. At least, you get a chance to meet me!”, Gary ridicules you. ",
+            "“I am not a kid and I will become the best pokemon trainer the world has ever seen!”, you rebut Gary. ",
+            "“Save your false dreams for another night’s sleep. I already beat you to get my first pokemon and I will be the best pokemon trainer ever on the face of the earth”, says Gary with a smirk on his face.",
             "assets/page_2_gary_challenges.gif",
-            "“Gary, show some respect! And what pokemon did you get?” you ask Gary, keeping your anger between your teeth.", 
-            "“You want some respect? You wanna know which pokemon I picked? Answer this puzzle and earn it!”" 
+            "“Gary, show some respect! And what pokemon did you get?” you ask Gary, keeping your anger between your teeth.",
+            "“You want some respect? You wanna know which pokemon I picked? Answer this puzzle and earn it!”"
         ],
         "backBtn": false
     },
     "puzzle_1": {
-        "item": "mcq", 
+        "item": "mcq",
         "itemCode": "puzzle_1",
         "title": "Earn some respect!",
-        "question": "What comes next in the pattern?", 
-        "description": "Pay attention to the items and the numbers!", 
-        "imgDir": "/assets/puzzle_1.PNG", 
+        "question": "What comes next in the pattern?",
+        "description": "Pay attention to the items and the numbers!",
+        "imgDir": "assets/puzzle_1.PNG",
         "optionType": "img",
-        "options": ["/assets/puzzle_1_op1.PNG", "/assets/puzzle_1_op2.PNG", "/assets/puzzle_1_op3.PNG", "/assets/puzzle_1_op4.PNG"], 
-        "correct":  "/assets/puzzle_1_op4.PNG", 
+        "options": ["assets/puzzle_1_op1.PNG", "assets/puzzle_1_op2.PNG", "assets/puzzle_1_op3.PNG", "assets/puzzle_1_op4.PNG"],
+        "correct":  "assets/puzzle_1_op4.PNG",
         "backBtn": true,
         "errorTitle": "That's wrong, buddy boy.",
         "errorImgDir": "assets/puzzle_1_wrong.gif",
@@ -107,7 +107,7 @@
             "info",
             "image",
             "info"
-           
+
         ],
         "objectDescription": [
             "Gary is off to start his pokemon training! ",
@@ -115,7 +115,7 @@
             "You - “Well, let's see who’s what when I get my first pokemon. Now, tell me what’s your first pokemon?”",
             "Gary - “It’s the best one available, Haha!”",
             "Gary makes a telling remark about how it is good to have a grandfather in the Pokemon business (which goes right over your head), and then departs in a chauffeured red convertible with his loyal fans and cheerleaders following behind.",
-            "/assets/page_3.gif",
+            "assets/page_3.gif",
             ""
         ],
         "backBtn": false
@@ -130,7 +130,7 @@
             "info",
             "image",
             "info"
-           
+
         ],
         "objectDescription": [
             "What's in store for you?",
@@ -151,25 +151,25 @@
             "info",
             "image",
             "info"
-           
+
         ],
         "objectDescription": [
             "Are you ready for a Pokemon?",
             "Your world is shattered. All those days where you aspired to become the best pokemon trainer in the world, all those dreams in which you conquered the best types of pokemons, all those medals you wanted to win by being a friend to your pokemons rather than a trainer came down like a pack of cards!",
             "“No Professor Oak! The only thing that I ever dreamt of in my life is to become a pokemon trainer. It’s my mistake that I am late to pick my first pokemon but I loved this Pikachu from the moment I have seen this. I will not be a mere trainer, but a very good friend with him. I will train my Pikachu to become the best electric pokemon!”, you plead Dr. Oak with teary eyes.",
-            "/assets/page_5.gif",
+            "assets/page_5.gif",
             "“This Pikachu is not in the best of his shape and I don’t want to put him in irresponsible hands. Prove it to me that you are wise and smart to rise to the situation and train this Pikachu”, remarks Professor Oak with a puzzle. "
         ],
         "backBtn": true
     },
     "puzzle_2": {
-        "item": "slider", 
+        "item": "slider",
         "itemCode": "puzzle_2",
-        "question": "Balance the poke-money scale to get Pikachu!", 
-        "description": "In the pokemon world, poke-dollars, poke-euros, poke-rupees and poke-yens are used. The left tray has 13 poke-dollars, 5 poke-euros, and 8 poke-rupees. How many poke-yens should you place in the right tray to balance the scale in poke-money value? (Hint: 1PD = 7PY, 1PE = 8PR, 1PR = 3PD)", 
-        "imgDir": "/assets/puzzle_2_ques.png", 
-        "min": 1050, 
-        "max": 1150, 
+        "question": "Balance the poke-money scale to get Pikachu!",
+        "description": "In the pokemon world, poke-dollars, poke-euros, poke-rupees and poke-yens are used. The left tray has 13 poke-dollars, 5 poke-euros, and 8 poke-rupees. How many poke-yens should you place in the right tray to balance the scale in poke-money value? (Hint: 1PD = 7PY, 1PE = 8PR, 1PR = 3PD)",
+        "imgDir": "assets/puzzle_2_ques.png",
+        "min": 1050,
+        "max": 1150,
         "correct": 1099,
         "backBtn": true,
         "errorTitle": "Bad!",
@@ -185,7 +185,7 @@
             "info",
             "image",
             "info"
-           
+
         ],
         "objectDescription": [
             "Your first Pokemon!",
@@ -204,7 +204,7 @@
             "info",
             "info",
             "info"
-           
+
         ],
         "objectDescription": [
             "Are you friends?",
@@ -215,7 +215,7 @@
         "backBtn": true
     },
     "puzzle_3": {
-        "item": "multimcq", 
+        "item": "multimcq",
         "itemCode": "puzzle_3",
       "question": [
         "Count Right!!",
@@ -232,7 +232,7 @@
         "How many Jameses are there?"
       ],
         "imgDir": [
-            "assets/puzzle_3.jpg", 
+            "assets/puzzle_3.jpg",
             "",
             "",
             "",
@@ -244,14 +244,14 @@
           [ "10", "7", "9", "11"],
           [ "3", "4", "5","6" ],
           ["2","4","6","8"]
-        ], 
+        ],
         "correct": [
             "11",
             "5",
           "10",
           "4",
           "6"
-        ], 
+        ],
         "backBtn": true,
         "errorTitle": "That's not the way!",
         "errorImgDir": "assets/puzzle_3.gif",
@@ -266,7 +266,7 @@
             "image",
             "info",
             "info"
-           
+
         ],
         "objectDescription": [
             "Pikachu doesn't like pokeball",
@@ -290,7 +290,7 @@
             "info",
             "image",
             "info"
-           
+
         ],
         "objectDescription": [
             "The quest starts...",
@@ -306,14 +306,14 @@
         "backBtn": true
     },
     "puzzle_4": {
-        "item": "written", 
+        "item": "written",
         "itemCode": "puzzle_4",
         "title": "Unlock the Pokedex",
         "question": "Use this code sheet to decipher the given morse code",
-        "description": "What does this encrypted code read? The unlock code is the decrypted value times the number of consonants in the English alphabets (in digits). ", 
-        "imgDir": "/assets/puzzle_4_ques.PNG",
-        "imgDir_sub": "/assets/puzzle_4_sub.png",
-        "correct": "315", 
+        "description": "What does this encrypted code read? The unlock code is the decrypted value times the number of consonants in the English alphabets (in digits). ",
+        "imgDir": "assets/puzzle_4_ques.PNG",
+        "imgDir_sub": "assets/puzzle_4_sub.png",
+        "correct": "315",
         "backBtn": true,
         "errorTitle": "Psst..",
         "errorImgDir": "assets/puzzle_4.gif",
@@ -334,7 +334,7 @@
             "info",
             "info",
             "info"
-           
+
         ],
         "objectDescription": [
             "Dexter, prankster!",
@@ -346,7 +346,7 @@
             "You: Yeah but, this isn't a forest, it's an open field.",
             "Dexter: It also comes out into fields to steal food from stupid travelers.",
             "You: That means.. I'm stupid?",
-            "The truth hurts sometimes, Ashy-boy!" 
+            "The truth hurts sometimes, Ashy-boy!"
         ],
         "backBtn": false
     },
@@ -363,7 +363,7 @@
         ],
         "objectDescription": [
             "Ill Fate!",
-            "Undeterred by your failure to win the confidence of either your pet mouse or your inanimate electronic encyclopedia, you decide to go all Safari Zone and start chucking rocks at the Pidgey.", 
+            "Undeterred by your failure to win the confidence of either your pet mouse or your inanimate electronic encyclopedia, you decide to go all Safari Zone and start chucking rocks at the Pidgey.",
             "assets/page_11_stone.gif",
             "Unfortunately, you accidentally strike an ornery Spearow instead, causing it to attack Pikachu. Pikachu reciprocates with a vicious ThunderShock and Spearow calls for the backup of its feathery flock.",
             "assets/page_11_attack.gif",
@@ -372,17 +372,17 @@
         "backBtn": true
     },
     "puzzle_5": {
-        "item": "slider", 
+        "item": "slider",
         "itemCode": "puzzle_5",
-        "question": "Can you get ahead?", 
-        "description": "How many Spearows are trying to attack you?", 
-        "imgDir": "/assets/puzzle_5.gif", 
-        "min": 5, 
-        "max": 15, 
-        "correct": 9, 
+        "question": "Can you get ahead?",
+        "description": "How many Spearows are trying to attack you?",
+        "imgDir": "assets/puzzle_5.gif",
+        "min": 5,
+        "max": 15,
+        "correct": 9,
         "backBtn": true,
         "errorTitle": "Are you insane?",
-        "errorImgDir": "/assets/puzzle_5_wrong.gif",
+        "errorImgDir": "assets/puzzle_5_wrong.gif",
         "errorMsg": "You look like you are inviting harm from the Spearow folk. For God’s sake, at least get our cute little Pikachu out of the danger, and then be the angry little young man that you are!"
     },
     "page_12": {
@@ -393,7 +393,7 @@
             "info",
             "image",
             "info"
-            
+
         ],
         "objectDescription": [
             "Swim or Stupid?",
@@ -442,39 +442,39 @@
         "objectDescription": [
            "Unlock the bike",
            "Look at the two arrows, one red and the other blue",
-           "/assets/puzzle_6_q.jpg",
+           "assets/puzzle_6_q.jpg",
            "How are the map and lists of high and low temperatures connected?",
-           "/assets/puzzle_6_h.jpg",
+           "assets/puzzle_6_h.jpg",
            "What combinations could open the locks?",
-           "/assets/puzzle_6_l.jpg",
+           "assets/puzzle_6_l.jpg",
            ""
         ],
         "backBtn": true
     },
     "puzzle_6": {
-        "item": "multimcq", 
+        "item": "multimcq",
         "itemCode": "puzzle_6",
         "question": [
-            "Can you unlock them?", 
+            "Can you unlock them?",
             ""
         ],
         "description": [
-            "The blue lock has four wheels to spin for a combination. The first two wheels are letters and the other two wheels are numbers. Which combination do you use for the blue lock?", 
+            "The blue lock has four wheels to spin for a combination. The first two wheels are letters and the other two wheels are numbers. Which combination do you use for the blue lock?",
             "The red lock has five wheels to spin for a combination. The first two wheels are letters and the other three wheels are numbers. Which combination do you use for the red lock?"
         ],
         "imgDir": [
-            "", 
+            "",
             "",
             ""
         ],
         "options": [
             ["NC34", "ND60", "TN32", "TX23", "SC22", "SD58"],
             ["IA118", "ID118", "IH117", "IL117", "IN116", "IO116"]
-        ], 
+        ],
         "correct": [
             "SC22",
             "ID118"
-        ], 
+        ],
         "backBtn": true,
         "errorTitle": "Come on, concentrate!",
         "errorImgDir": "assets/puzzle_6_hint.png",
@@ -517,13 +517,13 @@
             "info",
             "info",
             "info"
-            
+
         ],
         "objectDescription": [
            "Travelling Pokeball Salesman",
            "Kanto is a region in the Pokémon series and is the main region in first generation and a secondary region in the second generation of games. ",
            "You are at pallet Town currently with your friends. The goal is to reach Saffron City and professor Oak gave you two paths to reach Saffron City - land only route and a sea+land route.",
-           "/assets/puzzle_7.jpg",
+           "assets/puzzle_7.jpg",
            "Path 1: Goes through Cerulean City and Rock Tunnel",
            "Path 2: Goes through Cinnabar Island and Lavender Town",
            "Professor Oak explicitly instructed you to focus on the destination and to not take any path which will not lead to the destination"
@@ -532,14 +532,14 @@
         "backBtn": true
     },
     "puzzle_7": {
-        "item": "slider", 
+        "item": "slider",
         "itemCode": "puzzle_7",
-        "question": "Divide and Conquer", 
-        "description": "Keep adding the route values for both the paths as you tread forward. Add the two values that you get from Paths 1,2 and pick it on the slider.", 
-        "imgDir": "", 
-        "min": 140, 
-        "max": 180, 
-        "correct": 159, 
+        "question": "Divide and Conquer",
+        "description": "Keep adding the route values for both the paths as you tread forward. Add the two values that you get from Paths 1,2 and pick it on the slider.",
+        "imgDir": "",
+        "min": 140,
+        "max": 180,
+        "correct": 159,
         "backBtn": true,
         "errorTitle": "Almost there, but not quite...",
         "errorImgDir": "assets/puzzle_7_error.gif",
@@ -575,7 +575,7 @@
         "itemCode": "end_page",
         "title": "Thank You For Playing!",
         "imgDir": "assets/pokemon_pandemic.jpeg",
-        "description": "We appreciate the time and effort you've given in trying out and successfully completing our escape room. We've logged the time and click details during your playthrough which you can download by clicking on the button below. We would appreciate it if you could mail a copy of the generated log file to ar9fb@virginia.edu, this would help us with further development. Thank you.", 
+        "description": "We appreciate the time and effort you've given in trying out and successfully completing our escape room. We've logged the time and click details during your playthrough which you can download by clicking on the button below. We would appreciate it if you could mail a copy of the generated log file to ar9fb@virginia.edu, this would help us with further development. Thank you.",
         "backBtn": false
     },
 	"end_page_1": {
@@ -583,7 +583,7 @@
         "itemCode": "end_page",
         "title": "Thank You For Playing!",
         "imgDir": "",
-        "description": "We appreciate the time and effort you've given in trying out and successfully completing our escape room. We've logged the time and click details during your playthrough which you can download by clicking on the button below. We would appreciate it if you could mail a copy of the generated log file to ar9fb@virginia.edu, this would help us with further development. Thank you.", 
+        "description": "We appreciate the time and effort you've given in trying out and successfully completing our escape room. We've logged the time and click details during your playthrough which you can download by clicking on the button below. We would appreciate it if you could mail a copy of the generated log file to ar9fb@virginia.edu, this would help us with further development. Thank you.",
         "backBtn": false
     }
 }
