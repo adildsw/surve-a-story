@@ -45,7 +45,7 @@ module.exports = (function(options_args){
   let storyRaw = fs.readFileSync(options.story);
   let story = JSON.parse(storyRaw); // Stores story data
 
-  let logHeader = ["Time Elapsed", "Item Code", "Response", "Correct?"];
+  let logHeader = ["Time Elapsed (s)", "Item Code", "Response", "Correct?"];
 
   // Add base url to all views middleware
   router.use(function(request, response, next){
@@ -201,7 +201,12 @@ module.exports = (function(options_args){
 
   // This route allows downloading the playthrough logs
   router.post('/download', function(request, response) {
-      const logsCSV = converter.convertArrayToCSV(sess.logs, {header: logHeader, separator: ","});
+      // Convert ms to seconds in log
+      const adaptedLogs = request.session.logs.map((entry)=>{
+        entry[0] = entry[0]/1000;
+        return entry
+      })
+      const logsCSV = converter.convertArrayToCSV(adaptedLogs, {header: logHeader, separator: ","});
       response.setHeader('Content-disposition', 'attachment; filename=playthrough-log.csv');
       response.set('Content-type', 'text/csv');
       response.status(200).send(logsCSV);

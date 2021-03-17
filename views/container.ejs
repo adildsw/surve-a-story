@@ -89,6 +89,14 @@
                 });
             })
 
+            // Reset button functionality
+            $(document).on("click", "#resetBtn", function() {
+                $.get("reset", function(response) {
+                    document.getElementsByTagName("html")[0].innerHTML = response;
+                    window.location = window.location;
+                });
+            });
+            
             // Dynamically display the slider selection value on slider change
             $("#sliderInput").on('input', function() {
                 $("#sliderVal").text($(this).val());
@@ -262,12 +270,18 @@
                             <i class="download right icon"></i>
                             Download Playthrough Log
                         </button>
+                        <% if (backBtn) { %>
+                        <button style="margin-top: 2px;" class="ui fluid labeled icon button" id="resetBtn">
+                            <i class="arrow alternate circle left icon"></i>
+                            Reset
+                        </button>
+                        <% } %>
                     <% } %>
 
                     <% if (item != "start" && item != "end") { %>
                         <% if (backBtn) { %>
                             <button style="margin-top: 2px;" class="ui fluid labeled icon button" id="backBtn">
-                                <i class="arrow alternate circle left icon"></i>
+                                <i class="arrow alternate circle home icon"></i>
                                 Back
                             </button>
                         <% } %>
